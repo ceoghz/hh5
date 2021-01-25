@@ -6,7 +6,7 @@
 		</view>
 	    <view class="main">
 			<!-- 去购买 -->
-			<view class="buy-goods">
+			<view class="buy-goods" @click="goodsDetail(buyGoods.id)">
 				<view class="img">
 					<image :src="buyGoods.image_url"></image>
 				</view>
@@ -84,6 +84,7 @@
 					this.goodsData=res.data.data.similar
 					this.buyGoods=res.data.data.product
 					this.shopName=res.data.data.product.mch.name;
+					
 				})
 			},
 			back(){
@@ -93,6 +94,7 @@
 			},
 			//跳转商品详情
 			goodsDetail(id){
+				console.log(id,'iiid')
 				uni.navigateTo({
 				    url: '/pages/goods/goodsDetail?id='+id
 				});

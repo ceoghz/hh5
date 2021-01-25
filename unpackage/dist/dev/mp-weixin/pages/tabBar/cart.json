@@ -1,5 +1,7 @@
 {
   "navigationBarTitleText": "购物车",
   "navigationStyle": "custom",
-  "usingComponents": {}
+  "usingComponents": {
+    "editgui": "/components/editgui"
+  }
 }

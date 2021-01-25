@@ -245,7 +245,7 @@
 .b-buy.data-v-1cf207e0 {
   width: 200rpx;
   height: 60rpx;
-  font-size: 2rpx;
+  font-size: 26rpx;
   -webkit-border-radius: 40rpx;
           border-radius: 40rpx;
   text-align: center;

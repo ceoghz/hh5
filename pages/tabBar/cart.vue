@@ -6,32 +6,31 @@
 			<text style="font-size:32upx;font-weight: bold;color: #333333;" hover-class='main-bg-hover-color' @click="switchClick"> {{ isFlag ?'编辑':'完成' }}</text>
 		</view>
 		<view class="tis" v-if="goodsList.length==0">购物车是空的哦~</view>
-		<view class="my-10 mb-3 pd-20 row" v-if="goodsList.length>0"  v-for="(row, index) in goodsList" :key="index">
+		<view class="my-10 mb-3 pd-20 row"  v-for="(row, index) in goodsList" :key="index">
 			<!-- 商品 -->
 			<view class="top-firm-info">
 				<view class="">
-					<checkbox color="#FD8A03" :checked="row.selectedAll" @click="firmSelectedAll(index)"/>
+					<checkbox color="#FD8A03" :checked="row.selectedAll" @click="firmSelectedAll(index)" />
 				</view>
-				<view class="firm-box">
+				<view class="firm-box" @click="storeClick(row.mch_id)">
 					<text class="firm-name" style="vertical-align: middle;">{{row.name}} </text>
 					<image style="width: 48upx;height: 48upx;vertical-align: middle;" src="../../static/img/btn_more_1.png" mode=""></image> 
 					<cmd-icon type="chevron-right" size="14" color="#888"></cmd-icon>
 				</view>
 			</view>
 			<!-- 企业商品列表 -->
-			<view class="firm-goods-list" v-for="(goods,i) in row.product">
+			<view class="firm-goods-list" v-for="(goods,i) in row.product" @click="goodsClick(goods.pid)">
 				<view class="">
 					<checkbox color="#FD8A03" :checked="goods.selected" @click="selectedSole(index, i)" />
 				</view>
 				<image class="goods-img" :src="goods.image_url"></image>
 				<view class="right-goods-box">
 					<view class="goods-name">{{goods.product_title}}</view>
-					<view class="my-10 goods-spec d-flex ">
+					<view class="my-10 goods-spec d-flex " @click.stop="cartClick(goods.pid,goods.cart_id)">
 						<view class="text d-flex a-center">
 							<text>{{goods.attribute}}</text>
 							<image style="width: 32upx;height: 32upx;vertical-align: middle;transform: rotate(90deg);" src="../../static/img/btn_more_1.png" mode=""></image>
 						</view> 
-						
 					</view>
 					<view class="price-number-box">
 						<view class="red-price"><text style="font-size: 24upx;">￥</text><text> {{goods.price}}</text> </view>
@@ -65,21 +64,160 @@
 			<view class="goods-remove" :style="{color:selectedAllRowLength === 0?'#999999':'',borderColor:selectedAllRowLength === 0?'#999999':''}"  @click="removeGoodsEvent">删除</view>
 			
 		</view>
+		<view v-if="ifVk" class="hhhhh">
+			<editgui :goodsId="goodsId" @closeVK="closeVK" @changeGui="changeGui"></editgui>
+		</view>
+		
 	</view>
 </template>
 <script>
+	import editgui from "@/components/editgui.vue"
+	var that;											// 当前页面对象
+	var app = getApp();						// 可获取全局配置
 	export default {
+		components: {
+		   type:'cart',
+		   productArr:[],
+		   editgui,
+		},
 		data() {
 			return {
-				goodsList: [],
+				goodsList: [
+					{
+						firmId: 101,
+						firmName: '阿里巴巴',
+						selectedAll: false,
+						goods: [
+							{
+								id: 1,
+								img: 'https://lhscbigimgs.oss-cn-beijing.aliyuncs.com/1/pc/1606960949859.jpeg',
+								name: '商品标题商品标题商品标题商品标题商品标题1商品标题1商品标题1商品标题1商品标题1商品标题1商品标题1商品标题1商品标题1商品标题1商品标题1商品标题1商品标题1商品标题1商品标题1商品标题1商品标题1商品标题1商品标题1商品标题1商品标题1',
+								spec: '规格:S码',
+								price: 127.5,
+								number: 1,
+								selected: false
+							}, {
+								id: 2,
+								img: 'https://lhscbigimgs.oss-cn-beijing.aliyuncs.com/1/pc/1605261423736.jpeg',
+								name: '商标',
+								spec: '规格:S码',
+								price: 2.5,
+								number: 2,
+								selected: false
+							}
+						]
+					}, {
+						firmId: 102,
+						firmName: 'GeekFun',
+						selectedAll: false,
+						goods: [
+							{
+								id: 3,
+								img: 'https://lhscbigimgs.oss-cn-beijing.aliyuncs.com/1/pc/1605261423736.jpeg',
+								name: '商品标题1',
+								spec: '规格:S码',
+								price: 127.5,
+								number: 1,
+								selected: false
+							}
+						]
+					},
+					{
+						firmId: 103,
+						firmName: 'GeekFun',
+						selectedAll: false,
+						goods: [
+							{
+								id: 4,
+								img: 'https://lhscbigimgs.oss-cn-beijing.aliyuncs.com/1/pc/1605261423736.jpeg',
+								name: '商品标题1',
+								spec: '规格:S码',
+								price: 127.5,
+								number: 1,
+								selected: false
+							}
+						]
+					}
+				],
 				isSelectedAllRow: false, // 全选所有商品
 				selectedAllRowList: [],
 				selectedAllRowLength: 0,
 				sumPrice: '0.00', // 总价格
 				isFlag:true,
+				skuKey:false,
+				skuMode:1,
+				goodsId:'',
+				cart_id:'',
+				goodsData:{},//商品数据	
+				carNum:0,//购物车商品数量
+				ifGou:false,//购物车里是否有该店铺商品
+				sku:[],
+				ifKu:false,//是否有库存
+				ifVk:false,
+				// guiData,
 			}
 		},
+		// 监听 - 页面每次【加载时】执行(如：前进)
+		onLoad(options) {
+			that = this;
+			console.log(options,'zzz')
+		},
 		methods: {
+			//确认修改规格
+			changeGui(select){
+				this.ifVk=false
+				console.log(select,this.cart_id,'sss')
+				this.$http.post(
+					 '',
+					 {
+						store_id:1,
+						store_type:2,
+						module:'app',
+						action:"cart",
+						app:"modify_attribute",
+						access_id:uni.getStorageSync('access_id'),
+						cart_id:this.cart_id,
+						attribute_id:select.select._id,
+					 }).then((res)=>{
+						 if(res.data.code==200){
+							
+						 } else{
+							uni.showToast({
+								title:res.data.message,
+								icon:'none'
+							}) 
+						 }
+						 console.log(res,'xxx')
+					 })
+			},
+			//关闭规格弹窗
+			closeVK(){
+				this.ifVk=false
+				console.log(this.ifVk,'ccc')
+			},
+			//点击规格
+			cartClick(pid,cart_id){
+				this.goodsId=pid 
+				this.cart_id=cart_id
+				console.log(this.goodsId,'jjj')
+				this.$nextTick(function(){
+					this.ifVk=true
+					console.log(this.ifVk,'bbbb')
+				})	
+			},
+			
+			//跳转商品详情
+			goodsClick(id){
+				// uni.navigateTo({
+				//     url: '/pages/goods/goodsDetail?id='+id
+				// });
+			},
+			//跳转店铺详情
+			storeClick(id){
+				uni.navigateTo({
+				    url: '/pages/shop/shop?id='+id
+				});
+			},
 			//结算
 			settlement(){
 				let arr = []
@@ -305,10 +443,13 @@
 					app:'info'
 				}).then(res=>{
 					if(res.data.code === 200){
-						this.goodsList = this.funCick(res.data.data) 
+						this.goodsList = this.funCick(res.data.data)
+						 let goodsId=(this.goodsList[0].product)[0].pid
+						 // this.init(goodsId)
 					}
 					console.log(res)
-					console.log('resresres')
+					
+					// console.log(this.goodsList,this.goodsId,'resresres')
 				})
 			},
 			funCick(arr){
@@ -320,8 +461,6 @@
 				})
 				return arr
 			}
-		},
-		mounted() {
 		},
 		onShow() {
 			this.requestCart()

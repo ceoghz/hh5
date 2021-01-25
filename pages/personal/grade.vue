@@ -1,7 +1,7 @@
 <template>
 	<view class="fen">
 		<view class="header">
-			<Head title="我的积分"></Head>
+			<Head title="我的积分" Color="#fff" bgColor="linear-gradient(90deg, #FD8A03 0%, #FD5700 100%)"></Head>
 			<view class="" :style="{height:nav_height+'px',width:'100%'}"></view>
 			<view class="grade-gui"><view>使用说明</view></view>
 		</view>

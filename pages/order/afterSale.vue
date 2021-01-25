@@ -3,8 +3,8 @@
 	   <view class="collection-header">
 			<Head title="售后详情"></Head>
 			<view class="" :style="{height:nav_height+'px',width:'100%'}"></view>
-				<view v-if="orderStatus=='待付款'">剩余支付时间：{{yu_time}}</view>
-				<view v-else-if="orderStatus=='交易关闭'">已退款</view>
+				<view>退货中</view>
+				<view>您的回寄商品需要3~5个工作日完成审核，请耐心等待</view>
 	   </view>
 		<view class="main1">
 			<view class="shou-hou">
@@ -43,14 +43,11 @@
 		data(){
 			return{
 				nav_height:0,
-				title:'商品订单详情',
-				head1:'',
-				head2:'',
-				orderId:'',
-				orderData:{},//订单数据
-				orderDetail:[],//订单详情
-				orderStatus:'',//订单状态
-				yu_time:'',//剩余时间
+				orderId:'',//订单id
+				goodsId:'',//商品id
+				info:{},//商品信息
+				store_info:{},//店铺信息
+				send_info:{},//寄回物流信息
 			}
 		},
 		created() {
@@ -85,34 +82,7 @@
 				 }).then((res)=>{
 					console.log(res,'hh')
 					if(res.data.code==200){
-						// this.orderData=res.data.data
-						// this.orderDetail=res.data.data.mch
-						// let status=(this.orderDetail[0].order_details)[0].order_details_status
-						// console.log(this.orderDetail,status,9999)
-						// if(status==0){
-						// 	this.orderStatus='待付款'
-						// 	let time=this.orderData.surplus
-						// 	let t = setInterval(() => {
-						// 	        time--
-						// 	        this.yu_time= this.formatSeconds(time)
-						// 	        if (time == 0) {
-						// 	          clearInterval(t)
-						// 			  uni.navigateTo({
-						// 			      url: '/pages/personal/myOrder'
-						// 			  });
-						// 	        }
-						// 	      }, 1000)
-						// }else if(status==1){
-						// 	this.orderStatus='待发货'
-						// }else if(status==2){
-						// 	this.orderStatus='待收货'
-						// }else if(status==3){
-						// 	this.orderStatus='待评价'
-						// }else if(status==5){
-						// 	this.orderStatus='交易成功'
-						// }else if(status==7){
-						// 	this.orderStatus='订单关闭'
-						// }	
+						
 					}else{
 						uni.showToast({
 							title:res.data.message

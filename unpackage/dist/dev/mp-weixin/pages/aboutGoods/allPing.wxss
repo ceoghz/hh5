@@ -87,6 +87,16 @@
           border-radius: 50%;
   margin-right: 20rpx;
 }
+.ping-head .ni.data-v-6fb4d826 {
+  display: inline-block;
+  width: 74rpx;
+  height: 74rpx;
+  vertical-align: middle;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  margin-right: 20rpx;
+  background: #ccc;
+}
 .ping .time.data-v-6fb4d826 {
   font-size: 24rpx;
   color: #999;

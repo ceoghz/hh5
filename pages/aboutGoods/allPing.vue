@@ -8,8 +8,11 @@
 			<!-- 评价 -->
 			<view class="ping" v-if='comments.length>0'>
 				<view class="ping-list" v-for="(item,index) in comments" :key="index">
-					<view class="ping-head">
+					<view class="ping-head" v-if="item.user_name!==null">
 						<image :src="item.headimgurl"></image>{{item.user_name}}
+					</view>
+					<view class="ping-head" v-else>
+						<text class="ni"></text>匿名
 					</view>
 					<view class="time">
 						{{item.add_time}}&nbsp;&nbsp;&nbsp;&nbsp;{{item.attribute_str}}

@@ -82,8 +82,6 @@
 				<view @click="placeOrderRequest" class="add-btn d-flex j-center a-center">提交订单</view>
 			</view>
 		</view>
-		
-		
 		<uni-popup ref="showpopup" :type="'bottom'">
 			<view class="popup-content ">
 				<scroll-view class="scrollView" scroll-y='true' style="height: 100%;" @scrolltolower = 'scrolltolower'>
@@ -172,7 +170,7 @@
 				}).then(res=>{
 					console.log(res)
 					uni.hideLoading()
-					if(res.data.code === "200"){
+					if(res.data.code === 200){
 						this.payInfo = res.data.data
 						uni.navigateTo({
 							url:`/pages/pay/payorder?payInfo=${encodeURIComponent(JSON.stringify(this.payInfo))}`

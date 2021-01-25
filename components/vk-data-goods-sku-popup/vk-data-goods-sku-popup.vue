@@ -59,6 +59,7 @@
 									:step="stepBuyNum" 
 									:step-strictly="stepStrictly"
 									:positive-integer="true"
+									:disabled="disabled"
 								></vk-data-input-number-box>
 							</view>
 						</view>
@@ -295,6 +296,11 @@
 				Type:String,
 				default:"default"
 			},
+			// 是否禁用数量
+			disabled:{
+				type: Boolean,
+				default: false
+			},
 		},
 		data() {
 			return {
@@ -401,11 +407,12 @@
 			}
 		},
 		mounted(){
-
+            this.init()
 		},
 		methods: {
 			// 初始化
 			init(){
+				console.log(that.goodsInfo,'vvv')
 				// 清空之前的数据
 				that.selectArr = [];
 				that.subIndex = [];
@@ -439,6 +446,7 @@
 					success(data) {
 						that.updateGoodsInfo(data.goodsInfo);
 						// 更新缓存 
+						console.log(data,'iii')
 						goodsCache[that.goodsId] = data.goodsInfo;
 					}
 				});
@@ -470,6 +478,7 @@
 				
 				// 先获取缓存中的商品信息
 				let useCache = false;
+				console.log(goodsInfo,999)
 				let goodsInfo = goodsCache[that.goodsId];
 				if(goodsInfo){
 					useCache = true;
@@ -497,6 +506,7 @@
 				}else{
 					if(findGoodsInfoRun) that.findGoodsInfo({useCache});
 				}
+				console.log(goodsInfo,'ccc')
 			},
 			// 监听 - 弹出层收起
 			close(s){
@@ -573,6 +583,7 @@
 			// 计算sku里面规格形成路径
 			checkItem() {
 				let skuListName = that.skuListName;
+				console.log('nnn')
 				// console.time('计算有多小种可选路径需要的时间是');
 				// 去除库存小于等于0的商品sku
 				let skuList = that.goodsInfo[skuListName];

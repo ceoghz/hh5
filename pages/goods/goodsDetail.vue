@@ -17,7 +17,12 @@
 	    <view class="main">
 			<view class="goods">
 				<view class="bText1">
-					<text class="bPrice">￥ <text>{{goodsP[0]}}.</text>{{goodsP[1]}}</text>
+					<view class="bPrice">￥ <text>{{goodsP[0]}}.</text>{{goodsP[1]}}</view>
+					<!-- #ifndef MP-WEIXIN -->
+					<view class="fenX" @click="copyH(goodsData.id)">
+						<image src="../../static/img/btn_share.png"></image>
+					</view>
+					<!-- #endif-->
 				</view>
 				<view class="bTitle">{{goodsData.product_title}}</view>
 				<view class='bText2'>
@@ -35,8 +40,11 @@
 					</view>
 				</view>
 				<view class="ping-list" v-if='comments.length>0'>
-					<view class="ping-head">
+					<view class="ping-head" v-if="comments[0].user!==null">
 						<image :src="comments[0].user.headimgurl"></image>{{comments[0].user.user_name}}
+					</view>
+					<view class="ping-head" v-else>
+						<text class="ni"></text>匿名
 					</view>
 					<view class="ping-content">
 						{{comments[0].content}}
@@ -56,7 +64,16 @@
 					<view class="store_logo">
 						<image :src="mch.logo_url"></image>{{mch.name}}
 					</view>
-					<view class="store_1 store_fen">分享店铺</view>
+					<!-- #ifndef MP-WEIXIN -->
+					<view class="store_1 store_fen" @click="copyShop(goodsData.mch_id)">
+						分享店铺
+					</view>
+					<!-- #endif-->
+					<!-- #ifndef H5 -->
+					<view class="store_1 store_fen" @click="shopFen(goodsData.mch_id)">
+						分享店铺
+					</view>
+					<!-- #endif-->
 					<view class="store_1 store_go" @click="jumpShop(goodsData.mch_id)">进店逛逛</view>
 				</view>
 				<view class="store_number">
@@ -226,10 +243,99 @@
 			console.log(this.goodsId,'ggg')
 			
 			this.init()
+			
 			// this.getlist();
 		},
 		methods:{
+			//小程序商品分享
+			onShareAppMessage: function(e) {
+				// console.log(e,'iiooo')
+				let title =this.goodsData.product_title
+				return {
+					title: title,
+					path: 'pages/goods/goodsDetail?id='+this.goodsId
+				}
+			},
+			shopFen(id){
+				//小程序店铺分享
+				// onShareAppMessage('shop')
+			},
 			
+			//h5复制连接
+			copyH(id){
+			    let result
+			    // #ifndef H5
+			    uni.setClipboardData({
+			      data: 'http://localhost:8080/#/pages/goods/goodsDetail?id='+id,
+			      success() {
+			        result = true
+			      },
+			      fail() {        
+			        result = false        
+			      }
+			    });
+			    // #endif
+			    
+			    // #ifdef H5 
+			      let textarea = document.createElement("textarea")
+			      textarea.value = 'http://localhost:8080/#/pages/goods/goodsDetail?id='+id
+			      textarea.readOnly = "readOnly"
+			      document.body.appendChild(textarea)
+			      textarea.select() // 选中文本内容
+			      // textarea.setSelectionRange(0, val.length) 
+			      result = document.execCommand("copy")
+				  if(result){
+					  uni.showToast({
+							icon: 'none',
+							title: '复制成功'
+						})
+				  }else{
+					  uni.showToast({
+							icon: 'none',
+							title: '复制失败'
+						})
+				  }
+			      textarea.remove()    
+			    // #endif
+			      return result
+			  },
+            copyShop(id){
+                let result
+                // #ifndef H5
+                uni.setClipboardData({
+                  data: 'http://localhost:8080/#/pages/shop/shop?id='+id,
+                  success() {
+                    result = true
+                  },
+                  fail() {        
+                    result = false        
+                  }
+                });
+                // #endif
+                
+                // #ifdef H5 
+                  let textarea = document.createElement("textarea")
+                  textarea.value = 'http://localhost:8080/#/pages/shop/shop?id='+id
+                  textarea.readOnly = "readOnly"
+                  document.body.appendChild(textarea)
+                  textarea.select() // 选中文本内容
+                  // textarea.setSelectionRange(0, val.length) 
+                  result = document.execCommand("copy")
+            	  if(result){
+            		  uni.showToast({
+            				icon: 'none',
+            				title: '复制成功'
+            			})
+            	  }else{
+            		  uni.showToast({
+            				icon: 'none',
+            				title: '复制失败'
+            			})
+            	  }
+                  textarea.remove()    
+                // #endif
+                  return result
+              },
 			jumpShop(id){
 				console.log(id)
 				uni.navigateTo({
@@ -279,79 +385,87 @@
 					
 				 }).then((res)=>{
 					console.log(res,'hh')
-					this.goodsData=res.data.data
-					this.goodsP=[this.goodsData.price.split('.')[0],this.goodsData.price.split('.')[1]]
-					this.comments=res.data.data.comments
-					this.mch=res.data.data.mch
-					this.carNum=Number(res.data.data.cart_num)
-					console.log(this.comments,'ccc')
-					//收藏id
-					this.collection_id=res.data.data.collection_id
-					if(this.collection_id===0){
-						this.ifShou=false
-					}else{
-						this.ifShou=true
-					}
-					//购物车中本商品数量
-					if(res.data.data.cart_num==='0'){
-						this.ifGou=false
-					}else{
-						this.ifGou=true
-					}
-					this.sku=res.data.data.sku
-					console.log(this.sku,888)
-					guiData._id=this.goodsId
-					guiData.name=this.goodsData.product_title
-					guiData.goods_thumb=this.goodsData.image_url
-					//获取规格类型
-					var str=this.sku[0].attribute.split(';')
-					guiData.spec_list=[]
-					console.log(guiData.spec_list,555)
-					str.forEach((item,index)=>{
-						if(item!==''){
-							guiData.spec_list.push({'name':item.split(':')[0],'list':[]})
-						}	
-					})
-					// console.log(guiData,666)
-					//获取个规格类型下的各规格
-					 var str3=[]
-					var att=''
-		            this.sku.forEach((item,index)=>{
-						var att1=''
-						var str2=[]
-						var obj2=''
-						item.attribute.split(';').forEach((it,ind)=>{
-							att=it.split(':')[1]
-							guiData.spec_list.forEach((it1,ind1)=>{
-								if(it.split(':')[0]===it1.name&&str3.indexOf(att)==-1){
-									str3.push(att)
-									it1.list.push({'name':att})
-								}	
-							})
-						})
-						if(item.num!==0){
-							this.ifKu=true;
-							item.attribute.split(';').forEach((it,ind)=>{
-								att1=it.split(':')[1]
-								if(att1!==undefined){
-									str2.push(att1)
-								}
-							})
-							obj2=str2.join(',')
-							// console.log(str2,obj2,index)
-							guiData.sku_list.push({
-								"_id":item.configure_id,
-								"goods_id":this.goodsId,
-								"goods_name":this.goodsData.product_title,
-								"image":item.img_url,
-								"price":(item.price)*100,
-								"sku_name":obj2,
-								"sku_name_arr":str2,
-								"stock":item.num
-							})
+					if(res.data.code==200){
+						this.goodsData=res.data.data
+						this.goodsP=[this.goodsData.price.split('.')[0],this.goodsData.price.split('.')[1]]
+						this.comments=res.data.data.comments
+						this.mch=res.data.data.mch
+						this.carNum=Number(res.data.data.cart_num)
+						console.log(this.comments,'ccc')
+						//收藏id
+						this.collection_id=res.data.data.collection_id
+						if(this.collection_id===0){
+							this.ifShou=false
+						}else{
+							this.ifShou=true
 						}
-					})
-					console.log(guiData,'bbbpp')
+						//购物车中本商品数量
+						if(res.data.data.cart_num==='0'){
+							this.ifGou=false
+						}else{
+							this.ifGou=true
+						}
+						this.sku=res.data.data.sku
+						console.log(this.sku,888)
+						guiData._id=this.goodsId
+						guiData.name=this.goodsData.product_title
+						guiData.goods_thumb=this.goodsData.image_url
+						//获取规格类型
+						var str=this.sku[0].attribute.split(';')
+						guiData.spec_list=[]
+						console.log(guiData.spec_list,555)
+						str.forEach((item,index)=>{
+							if(item!==''){
+								guiData.spec_list.push({'name':item.split(':')[0],'list':[]})
+							}	
+						})
+						// console.log(guiData,666)
+						//获取个规格类型下的各规格
+						 var str3=[]
+						var att=''
+						this.sku.forEach((item,index)=>{
+							var att1=''
+							var str2=[]
+							var obj2=''
+							item.attribute.split(';').forEach((it,ind)=>{
+								att=it.split(':')[1]
+								guiData.spec_list.forEach((it1,ind1)=>{
+									if(it.split(':')[0]===it1.name&&str3.indexOf(att)==-1){
+										str3.push(att)
+										it1.list.push({'name':att})
+									}	
+								})
+							})
+							if(item.num!==0){
+								this.ifKu=true;
+								item.attribute.split(';').forEach((it,ind)=>{
+									att1=it.split(':')[1]
+									if(att1!==undefined){
+										str2.push(att1)
+									}
+								})
+								obj2=str2.join(',')
+								// console.log(str2,obj2,index)
+								guiData.sku_list.push({
+									"_id":item.configure_id,
+									"goods_id":this.goodsId,
+									"goods_name":this.goodsData.product_title,
+									"image":item.img_url,
+									"price":(item.price)*100,
+									"sku_name":obj2,
+									"sku_name_arr":str2,
+									"stock":item.num
+								})
+							}
+						})
+						console.log(guiData,'bbbpp')
+					}else{
+						uni.showToast({
+						    title: '标题',
+						    duration: 1000
+						});
+					}
+					
 					
 				})
 			},

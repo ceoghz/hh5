@@ -1,7 +1,7 @@
 <template>
 	<view class="fen">
 	   <view class="collection-header">
-			<Head title="订单详情"></Head>
+			<Head title="订单详情" Color="#fff" bgColor="linear-gradient(90deg, #FD8A03 0%, #FD5700 100%)"></Head>
 			<view class="" :style="{height:nav_height+'px',width:'100%'}"></view>
 			<view class="home_top" v-if="orderStatus!=='订单关闭'">
 				<view class="head1">{{orderStatus}}</view>
@@ -32,7 +32,7 @@
 				<view>收货地址：{{orderData.sheng}} {{orderData.shi}} {{orderData.xian}} {{orderData.address}}</view>
 			</view>
 			<view class="order-list" v-for="(item,index) in orderDetail" :key="index">
-				<view class="list-head">{{item.mch_name}}<image src="../../static/img/btn_more_2.png"></image></view>
+				<view class="list-head" @click="jumpShop(item.mch_id)">{{item.mch_name}}<image src="../../static/img/btn_more_2.png"></image></view>
 				<view class="list-body" v-for="(it,ind) in item.order_details" :key="ind" @click="goodsClick(it.p_id)">
 					<view class="list-img">
 						<image :src="it.product_img"></image>
@@ -77,10 +77,10 @@
 		</view>
 		<view class="footer">
 			<view class="footer-btn">
-				<view>联系客服</view>
-				<view v-if="orderStatus=='待发货'&&(orderDetail[0].order_details)[0].return_order_status!==2">退款</view>
-				<view v-if="(orderDetail[0].order_details)[0].return_order_status==2">再次退款</view>
-				<view class="btn-fu" v-if="orderStatus=='待评价'" @click="goPing()">去评价</view>
+				<view @click="kf()">联系客服</view>
+				<view @click="jumpRefund" :data-id="product.id" :data-pid ="product.p_id" :data-productinfo= "encodeURIComponent(JSON.stringify(product))"  v-if="orderStatus=='待发货'&&(orderDetail[0].order_details)[0].return_order_status!==2">退款</view>
+				<view @click="jumpRefund" :data-id="product.id" :data-pid ="product.p_id" :data-productinfo= "encodeURIComponent(JSON.stringify(product))"   v-if="(orderDetail[0].order_details)[0].return_order_status==2">再次退款</view>
+				<view class="btn-fu" v-if="orderStatus=='待评价'" @click="jumpevaluation" :data-productinfo= "encodeURIComponent(JSON.stringify(product))" :data-id = "product.id">去评价</view>
 				<view @click="cancelOrder()" v-if="orderStatus=='待付款'">取消订单</view>
 				<view @click="cancelTui()" v-if="orderStatus=='退款中'">撤销退款</view>
 				<view class="btn-fu" v-if="orderStatus=='待收货'" @click="shouHuo()">确认收货</view>
@@ -107,6 +107,8 @@
 				orderDetail:[],//订单详情
 				orderStatus:'',//订单状态
 				yu_time:'',//剩余时间
+				product:{},//商品信息
+				status:'',
 			}
 		},
 		created() {
@@ -139,9 +141,10 @@
 					if(res.data.code==200){
 						this.orderData=res.data.data
 						this.orderDetail=res.data.data.mch
-						let status=(this.orderDetail[0].order_details)[0].order_details_status
-						console.log(this.orderDetail,status,9999)
-						if(status==0){
+						this.product=(this.orderDetail[0].order_details)[0]
+						this.status=(this.orderDetail[0].order_details)[0].order_details_status
+						console.log(this.product,status,9999)
+						if(this.status==0){
 							this.orderStatus='待付款'
 							let time=this.orderData.surplus
 							let t = setInterval(() => {
@@ -154,23 +157,23 @@
 									  });
 							        }
 							      }, 1000)
-						}else if(status==1){
+						}else if(this.status==1){
 							this.orderStatus='待发货'
-						}else if(status==2){
+						}else if(this.status==2){
 							this.orderStatus='待收货'
-						}else if(status==3){
+						}else if(this.status==3){
 							this.orderStatus='待评价'
-						}else if(status==5){
+						}else if(this.status==5){
 							this.orderStatus='交易成功'
-						}else if(status==7){
+						}else if(this.status==7){
 							this.orderStatus='订单关闭'
 						}else if((this.orderDetail[0].order_details)[0].return_order_status==0){
 							this.orderStatus='退款中'
 						}else if((this.orderDetail[0].order_details)[0].return_order_status==1){
 							this.orderStatus='交易关闭'
-						}else if((this.orderDetail[0].order_details)[0].return_order_status==2&&status==1){
+						}else if((this.orderDetail[0].order_details)[0].return_order_status==2&&this.status==1){
 							this.orderStatus='待发货'
-						}else if((this.orderDetail[0].order_details)[0].return_order_status==2&&status==2){
+						}else if((this.orderDetail[0].order_details)[0].return_order_status==2&&this.status==2){
 							this.orderStatus='待收货'
 						}
 									
@@ -201,6 +204,12 @@
 				uni.navigateTo({
 				    url: '/pages/goods/goodsDetail?id='+id
 				});
+			},
+			jumpShop(id){
+				console.log(id)
+				uni.navigateTo({
+					url:`/pages/shop/shop?id=${id}`
+				})
 			},
 			//取消订单
 			cancelOrder(){
@@ -244,7 +253,9 @@
 								 console.log(res,'fff')
 								 if(res.data.code==200){
 									 //确认收货
-									 that.init()
+									uni.navigateTo({
+									    url: '/pages/personal/myOrder'
+									});
 								 }
 							})
 				        } else if (res.cancel) {
@@ -255,12 +266,48 @@
 				
 			},
 			//去评价
-			goPing(){
-				
+			jumpevaluation(e){
+				let res = e.currentTarget.dataset
+				console.log(res,'iioooo')
+				uni.navigateTo({
+					url:`/pages/evaluation/evaluation?id=${res.id}&productinfo=${res.productinfo}`,
+					icon:'none'
+				})
 			},
+			//跳转申请退款
+			   jumpRefund(e){
+					console.log('e',e,this.status)
+					let res =e.currentTarget.dataset
+					uni.navigateTo({
+					 url:`/pages/order/service?id=${res.id}&status=${this.status}&pid=${res.pid}&productinfo=${res.productinfo}`,
+					}) 
+			   },
 			//撤销退款
 			cancelTui(){
-				
+				this.$http.post(
+				 '',
+				 {
+					access_id:uni.getStorageSync('access_id'),
+					store_id:'1',
+					store_type:'2',
+					module:'app',
+					action:"order",
+					app:"cancelRefund",
+					order_details_id:this.orderId
+				 }).then((res)=>{
+					 console.log(res,'fff')
+					 if(res.data.code==200){
+						 //撤销退款
+						uni.navigateTo({
+						    url: '/pages/personal/myOrder'
+						});
+					 }
+				})
+			},
+			kf(){
+				uni.navigateTo({
+				    url: '/pages/aboutGoods/service?pid=' + (this.orderDetail[0].order_details)[0].pid
+				});
 			},
 			
 		}

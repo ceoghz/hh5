@@ -84,6 +84,14 @@
   -webkit-justify-content: space-between;
           justify-content: space-between;
 }
+.fenX.data-v-3931d3e5 {
+  width: 44rpx;
+  height: 44rpx;
+}
+.fenX image.data-v-3931d3e5 {
+  width: 44rpx;
+  height: 44rpx;
+}
 .bPrice.data-v-3931d3e5 {
   font-size: 24rpx;
   color: #FA6E39;
@@ -170,6 +178,16 @@
           border-radius: 50%;
   margin-right: 20rpx;
 }
+.ping-head .ni.data-v-3931d3e5 {
+  display: inline-block;
+  width: 74rpx;
+  height: 74rpx;
+  vertical-align: middle;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  margin-right: 20rpx;
+  background: #ccc;
+}
 .ping-content.data-v-3931d3e5 {
   font-size: 28rpx;
   color: #333;
@@ -208,9 +226,13 @@
   padding: 14rpx 20rpx;
 }
 .store_logo.data-v-3931d3e5 {
+  width: 374rpx;
   font-size: 32rpx;
   color: #333;
   font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .store_logo image.data-v-3931d3e5 {
   width: 80rpx;

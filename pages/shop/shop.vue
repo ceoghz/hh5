@@ -90,17 +90,17 @@
 			//收藏店铺
 			collection(){
 				this.isCollection = !this.isCollection
-				// this.$http.post("",{
-				// 	access_id:uni.getStorageSync("access_id"),
-				// 	store_id:1,
-				// 	store_type:2,
-				// 	module:'app',
-				// 	action:'mch',
-				// 	m:'collection_shop',
-				// 	shop_id:'',//店铺id
-				// }).then(res=>{
-				// 	console.log(res)
-				// })
+				this.$http.post("",{
+					access_id:uni.getStorageSync("access_id"),
+					store_id:1,
+					store_type:2,
+					module:'app',
+					action:'mch',
+					m:'collection_shop',
+					shop_id:this.shop_id,//店铺id
+				}).then(res=>{
+					console.log(res)
+				})
 			}
 		},
 		onLoad(options) {
