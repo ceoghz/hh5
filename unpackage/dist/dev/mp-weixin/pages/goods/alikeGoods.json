@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "相似商品",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "head": "/components/head"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "找相似",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "head": "/components/head"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "申请售后",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "uni-popup": "/components/uni/uni-popup/uni-popup",
+    "head": "/components/head",
+    "uni-section": "/components/uni/uni-section/uni-section",
+    "uni-icons": "/components/uni/uni-icons/uni-icons"
+  }
+}

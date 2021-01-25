@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "浏览足迹",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "ren-calendar": "/components/ren-calendar/ren-calendar",
+    "head": "/components/head"
+  }
+}

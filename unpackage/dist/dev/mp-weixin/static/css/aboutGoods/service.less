@@ -1,0 +1,243 @@
+
+.fen{
+		height:100%;
+		width:100%;
+		font-family: '苹方-简 常规体';
+		background: #f4f4f4;
+		display: flex;
+		flex-direction: column;
+		.header{
+			width: 100%;
+		}
+	}
+.title{
+	width:750upx;
+	height:108upx;
+	display:flex;
+	background: #fff;
+	position:fixed;
+	left:0;
+	top:0;
+	z-index:99;
+}
+.back{
+	width:60upx;
+	height:108upx;
+	margin:24upx 0;
+	margin-right:224upx;
+}
+.back image{
+	width:60upx;
+	height:60upx;
+}
+.title text{
+	font-size:40upx;
+	font-family: '苹方-简 中黑体';
+	// font-weight: bold;
+	color:#333;
+	line-height:108upx;
+}
+.service {
+    margin-bottom: 50rpx;
+    // overflow: hidden;
+    overflow-y: auto;
+    padding: 20rpx;
+    padding-bottom: 40rpx;
+}
+
+.isservice {
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.service li {
+    background: #eee;
+    width: 100%;
+    padding-bottom: 40rpx;
+    clear: both;
+}
+
+.user {
+    float: left;
+    width: 80rpx;
+    height: 80rpx;
+    background: #999;
+}
+
+.box {
+    width: 100%;
+    min-height: 0;
+    background: transparent;
+}
+
+.info {
+    position: relative;
+    background: white;
+    border-radius: 15rpx;
+    margin: 0 15%;
+    font-size: 30rpx;
+    color: #020202;
+    max-width: 400rpx;
+    padding: 15rpx;
+    height: 100%;
+}
+
+.isImg {
+    width: 150rpx;
+    height: 150rpx;
+}
+
+.send_top,
+.sendBtn,
+.send_xe {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.sendBtn {
+    text-align: center;
+    border: 1px solid #eee;
+    font-size: 100rpx;
+    justify-content: center;
+    border-radius: 50%;
+    color: #020202;
+    width: 78rpx;
+    height: 78rpx;
+}
+
+.sendBtn > div {
+    width: auto;
+    height: auto;
+    display: inline-block !important;
+    display: inline;
+}
+
+.sendBtn > div img {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.send {
+    width: 100%;
+    text-align: right;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #eee;
+}
+
+.send_top {
+    justify-content: space-around;
+    padding: 20rpx;
+    border-bottom: 1px solid #DDDDDD;
+    border-top: 1px solid #ddd;
+}
+
+.send_top > input {
+    width: 620rpx;
+    height: 78rpx;
+    border: 1px solid #DDDDDD;
+    border-radius: 10rpx;
+    padding: 0 20rpx;
+    margin-right: 10rpx;
+}
+
+.send_bottom {
+    width: 100%;
+    padding: 30rpx;
+}
+
+.send_folat {
+    float: left;
+}
+
+.send_xe {
+    width: 120rpx;
+    height: 120rpx;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 14rpx;
+    justify-content: center;
+}
+
+.send_folat > p {
+    text-align: center;
+    font-size: 24rpx;
+    color: #666;
+    margin-top: 16rpx;
+}
+
+.isMe {
+    float: right
+}
+
+.isMeBox .info {
+    background: #BE9E5F;
+    color: white;
+    /*left:13.5%;*/
+}
+
+.triangleLeft,
+.triangleRight {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0.2rem 0.2rem 0.2rem 0;
+    border-color: transparent white transparent transparent;
+    /*透明 灰 透明 透明 */
+
+}
+
+.triangleLeft {
+    position: absolute;
+    top: 0.2rem;
+    left: -0.15rem
+}
+
+.triangleRight {
+    border-width: 0.2rem 0 0.2rem 0.2rem;
+    border-color: transparent transparent transparent #BE9E5F;
+    /*透明 透明 透明 灰*/
+    position: absolute;
+    top: 0.2rem;
+    right: -0.15rem
+}
+
+/* @media screen and (max-height:800px){
+    	.service{height: 11.4rem;}
+    	.isservice{height: 7.2rem;}
+    }
+    
+    @media screen and (min-height:800px){
+    	.service{height: 14.2rem;}
+    	.isservice{height: 10rem;}
+    }
+    @media screen and (min-height:820px){
+    	.service{height: 13rem;}
+    	.isservice{height: 8.5rem;}
+    } */
+.bigImg {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #020202;
+    width: 100%;
+    z-index: 50;
+}
+
+.bigImg > img {
+    width: 100%;
+}
+
+.box:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.right {
+    float: right;
+    margin: 0 3%;
+}

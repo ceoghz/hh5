@@ -1,0 +1,91 @@
+{
+  "pages": [
+    "pages/tabBar/cart",
+    "pages/tabBar/home",
+    "pages/goods/allGoods",
+    "pages/order/confirmorder",
+    "pages/search/search",
+    "pages/tabBar/my",
+    "pages/order/after",
+    "pages/personal/myOrder",
+    "pages/personal/orderDetail",
+    "pages/order/logistics",
+    "pages/pay/payorder",
+    "pages/pay/paycomplete",
+    "pages/my/footprint",
+    "pages/coupons/coupons",
+    "pages/personal/message",
+    "pages/personal/modify",
+    "pages/evaluation/evaluation",
+    "pages/shop/shop",
+    "pages/shouquan/index",
+    "pages/personal/address",
+    "pages/personal/aboutMe",
+    "pages/personal/grade",
+    "pages/order/refund",
+    "pages/goods/similar",
+    "pages/order/service",
+    "pages/my/collection",
+    "pages/msg/infoDetail",
+    "pages/tabBar/classification",
+    "pages/my/linesDetail",
+    "pages/my/myinfo",
+    "pages/msg/history",
+    "pages/login/loginH5",
+    "pages/personal/login",
+    "pages/personal/addAddress",
+    "pages/goods/erGoods",
+    "pages/goods/brandGoods",
+    "pages/goods/alikeGoods",
+    "pages/goods/goodsDetail",
+    "pages/aboutGoods/allPing",
+    "pages/aboutGoods/service"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#FA6E39",
+    "borderStyle": "black",
+    "backgroundColor": "#F8F8F8",
+    "list": [
+      {
+        "pagePath": "pages/tabBar/home",
+        "iconPath": "static/img/home1.png",
+        "selectedIconPath": "static/img/home1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/tabBar/classification",
+        "iconPath": "static/img/class1.png",
+        "selectedIconPath": "static/img/class1.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/tabBar/cart",
+        "iconPath": "static/img/cart.png",
+        "selectedIconPath": "static/img/cart.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/tabBar/my",
+        "iconPath": "static/img/my1.png",
+        "selectedIconPath": "static/img/my1.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "usingComponents": {
+    "heads": "/components/header"
+  }
+}

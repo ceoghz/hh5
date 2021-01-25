@@ -1,0 +1,238 @@
+
+.head{
+	background: #fff;
+    padding-top:108upx;
+}
+.fen{
+		height:100%;
+		width:100%;
+		background: #f4f4f4;
+		font-family: '苹方-简 常规体';
+		display: flex;
+		flex-direction: column;
+		.header{
+			width: 100%;
+			background: #fff;
+			padding-top:108upx;
+		}
+	}
+.title{
+	background-color: #fff;
+	width:750upx;
+	height:108upx;
+	display:flex;
+	position:fixed;
+	left:0;
+	top:0;
+	z-index:9999;
+}
+.back{
+	width:60upx;
+	height:108upx;
+	margin:24upx 0;
+	margin-right:20upx;
+}
+.back image{
+	width:60upx;
+	height:60upx;
+}
+.title text{
+	font-size:40upx;
+	font-family: '苹方-简 中黑体';
+	// font-weight: bold;
+	color:#333;
+	line-height:108upx;
+}
+.example-body {
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin:0 30upx;
+	font-size: 14px;
+	background-color: #ffffff;
+	width:690upx;
+	height:108upx;
+	border-top: 2px solid #F4F4F4;
+}
+.tab{
+	// height:108upx;
+	// overflow:hidden;
+}
+.tabs{
+	// display:flex;
+	// flex-wrap: nowrap;
+
+                // overflow-x: hidden;
+}
+// .tab-list{
+// 	height:108upx;
+// 	line-height:108upx;
+// 	width:128upx;
+// 	text-align:center;
+// 	font-size:32upx;
+// 	color:#333;
+// }
+.scroll-view_H {
+	white-space: nowrap;
+	width: 100%;
+	&::-webkit-scrollbar{
+	       display:none;
+	    }
+}
+.scroll-view-item_H{
+	display: inline-block;
+	margin:0 50upx;
+}
+.scroll-view-item_H view{
+	height: 108upx;
+	line-height:108upx;
+	font-size: 32upx;
+}
+.scroll-view-item_H p{
+	width:80upx;
+	height:6upx;
+    margin:0 auto;
+	background-color: #FA6E39;
+	border-radius: 3upx;
+	// border-bottom: 5upx solid #FA6E39;
+}
+/deep/.scroll-view-item_H ::-webkit-scrollbar { /* 隐藏滚动条，但依旧具备可以滚动的功能 */ display: none; width: 0; height: 0; color: transparent; background: transparent; } /deep/::-webkit-scrollbar { display: none; width: 0; height: 0; color: transparent; background: transparent; }
+.main{
+	background-color: #F4F4F4;
+	padding:20upx 30upx;
+}
+.san{
+	width:670upx;
+	background-color: #fff;
+	padding:20upx 0 20upx 20upx;
+	display:flex;
+	flex-wrap: wrap;
+	// justify-content: space-around;
+	border-radius: 20upx;
+	margin-bottom:20upx;
+}
+.san-list{
+	width:144upx;
+	margin-bottom:40upx;
+	margin-right:22upx;
+}
+.san-list image{
+	width:144upx;
+	height:144upx;
+}
+.san-list text{
+	width:100%;
+	text-align:center;
+	font-size:32upx;
+	margin-top:16upx;
+	color:#666;
+}
+.zhu{
+	background-color: #fff;
+	border-radius: 20upx;
+	margin-bottom:20upx;
+}
+.zhu h2{
+	height:90upx;
+	line-height:90upx;
+	padding-left:20upx;
+	font-size:36upx;
+	color:#333;
+	
+}
+.zhu hr{
+	// color:#F4F4F4;
+	height:0px;
+	border-bottom: 1px soid #F4F4F4;
+}
+.zhu .san{
+	border-radius: 0upx;
+	margin-bottom:0upx;
+}
+.goods{
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	background-color: #F4F4F4;
+}
+.goods-list{
+	width:336upx;
+	height:644upx;
+	background-color: #fff;
+	margin-top:20upx;
+	border-radius: 20upx;
+}
+.goods-list image{
+	width:336upx;
+	height:336upx;
+	border-radius: 20upx 20upx 0 0;
+}
+.goods-content{
+	height:288upx;
+	padding:0 20upx;
+	font-family:'苹方-简 常规体';
+	position:relative;
+}
+.gTitle{
+	font-size:32upx;
+	color:#333;
+	line-height:48upx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+.gText1{
+	position:absolute;
+	bottom:144upx;
+	left:20upx;
+	font-size:26upx;
+	color:#999;
+	line-height:34upx;
+}
+.gText2{
+	position:absolute;
+	bottom:80upx;
+	left:20upx;
+	font-size:22upx;
+	color:#BABABA;
+	width:296upx;
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	line-height:34upx;
+}
+.gPrice{
+	color:#FA6E39;
+}
+.gPrice text{
+	font-size:34upx;
+	// font-weight:bold;
+}
+.gText3{
+	position:absolute;
+	bottom:24upx;
+	left:20upx;
+	color:#FA6E39;
+	width:296upx;
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.gXiang{
+	width:90upx;
+	height:36upx;
+	font-size:20upx;
+	border-radius: 18upx;
+	text-align:center;
+	line-height:36upx;
+	background-color: #FFECE6;
+}
+.uni-loadmore{
+	width:100vw;
+	height:80rpx;
+	line-height:80rpx;
+	text-align:center;
+	padding-bottom:30rpx;
+}

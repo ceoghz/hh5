@@ -1,0 +1,1 @@
+<view class="circle-container"><view class="circle" style="{{'background:'+(bgColor?bgColor:'#ffffff')+';'+('border-color:'+(brColor?brColor:'#FA6E39')+';')}}">{{''+title+''}}</view></view>

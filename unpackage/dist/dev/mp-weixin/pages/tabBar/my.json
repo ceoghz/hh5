@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "我的",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "uni-badge": "/components/uni/uni-badge/uni-badge",
+    "circle": "/components/circle"
+  }
+}

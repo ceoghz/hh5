@@ -1,0 +1,1 @@
+<view class="fen data-v-0bed1728"><view class="header data-v-0bed1728"><head vue-id="71b64ede-1" title="客服" class="data-v-0bed1728" bind:__l="__l"></head><view style="{{'height:'+(nav_height+'px')+';'+('width:'+('100%')+';')}}" class="data-v-0bed1728"></view></view><block wx:if="{{kefu_url}}"><web-view src="{{kefu_url}}" class="data-v-0bed1728"></web-view></block></view>

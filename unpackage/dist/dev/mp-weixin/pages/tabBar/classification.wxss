@@ -1,0 +1,173 @@
+.classification.data-v-234f7bae {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+.class_main.data-v-234f7bae {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  background-color: #F8F8F8;
+  overflow: hidden;
+  /* 隐藏滚动条 */
+}
+.class_main.data-v-234f7bae ::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
+  height: 0 !important;
+  -webkit-appearance: none;
+  background: transparent;
+}
+.class_main .left.data-v-234f7bae {
+  width: 196rpx;
+  background-color: #fff;
+}
+.class_main .left .type1.data-v-234f7bae {
+  width: 195rpx;
+  height: 92rpx;
+  font-size: 14px;
+}
+.class_main .left .type1 .tab.data-v-234f7bae {
+  width: 160rpx;
+  height: 52rpx;
+  font-size: 32rpx;
+  -webkit-border-radius: 26px;
+          border-radius: 26px;
+}
+.class_main .left .current.data-v-234f7bae {
+  color: #FFFFFF;
+  background: #FA6E39;
+}
+.class_main .right.data-v-234f7bae {
+  width: 520rpx;
+  margin-right: 20rpx;
+}
+.class_main .right .type2 ._p.data-v-234f7bae {
+  margin: 46rpx 0 26rpx 0;
+  font-size: 14px;
+}
+.class_main .right .type2 .type3Box.data-v-234f7bae {
+  width: 100%;
+  height: auto;
+  -webkit-border-radius: 28rpx;
+          border-radius: 28rpx;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  padding-top: 36rpx;
+  margin-bottom: 36rpx;
+}
+.class_main .right .type2 .type3Box .type3.data-v-234f7bae {
+  margin: 0 10rpx 10rpx 10rpx;
+}
+.class_main .right .type2 .type3Box .type3 .icon.data-v-234f7bae {
+  width: 144rpx;
+  height: 144rpx;
+  display: block;
+}
+.class_main .right .type2 .type3Box .type3 text.data-v-234f7bae {
+  padding: 0rpx 0;
+  display: block;
+  width: 144rpx;
+  overflow: hidden;
+  text-align: center;
+  color: #666666;
+}
+.recommended.data-v-234f7bae {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 32rpx;
+  -webkit-border-radius: 20rpx;
+          border-radius: 20rpx;
+  background-color: #FFFFFF;
+}
+.recommended image.data-v-234f7bae {
+  -webkit-border-radius: 20rpx 0rpx 0rpx 20rpx;
+          border-radius: 20rpx 0rpx 0rpx 20rpx;
+  width: 200rpx;
+  height: 200rpx;
+}
+.recommended .recommended_right.data-v-234f7bae {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 12rpx 14rpx;
+  width: calc(100% - 200rpx);
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+}
+.recommended .recommended_right .text.data-v-234f7bae {
+  color: #333333;
+  font-size: 32rpx;
+  font-weight: 400;
+  line-height: 40rpx;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.recommended .recommended_right .introduce.data-v-234f7bae {
+  width: 100%;
+  position: relative;
+  height: 40rpx;
+}
+.recommended .recommended_right .introduce_l.data-v-234f7bae {
+  color: #999999;
+  font-size: 24rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 60%;
+}
+.recommended .recommended_right .introduce_r.data-v-234f7bae {
+  position: absolute;
+  top: 0;
+  right: -14rpx;
+  width: 35%;
+  height: 36rpx;
+  background: #FFECE6;
+  color: #FA6E39;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  font-size: 20rpx;
+  -webkit-border-radius: 18rpx 0 0 18rpx;
+          border-radius: 18rpx 0 0 18rpx;
+}
+.recommended .recommended_right .product_price.data-v-234f7bae {
+  width: 100%;
+}
+.recommended .recommended_right .product_price_l.data-v-234f7bae {
+  color: #FA6E39;
+}
+.recommended .recommended_right .product_price_r.data-v-234f7bae {
+  color: #BABABA;
+  font-size: 20rpx;
+}
+

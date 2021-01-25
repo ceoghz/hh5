@@ -1,0 +1,152 @@
+.coupons.data-v-4957c4fd {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-around;
+          justify-content: space-around;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 30rpx 20rpx 20rpx;
+}
+.coupons > view.data-v-4957c4fd {
+  width: 336rpx;
+  height: 220rpx;
+  -webkit-border-radius: 30rpx;
+          border-radius: 30rpx;
+}
+.coupons .coupons-item.data-v-4957c4fd {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  position: relative;
+  margin-bottom: 30rpx;
+}
+.coupons .coupons-item-l.data-v-4957c4fd {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  -webkit-border-radius: 30rpx 0rpx 0rpx 30rpx;
+          border-radius: 30rpx 0rpx 0rpx 30rpx;
+  background: -webkit-gradient(linear, left top, right top, from(#FD8A03), to(#FD5700));
+  background: -webkit-linear-gradient(left, #FD8A03 0%, #FD5700 100%);
+  background: linear-gradient(90deg, #FD8A03 0%, #FD5700 100%);
+}
+.coupons .coupons-item-l .coupons-item-l-1.data-v-4957c4fd {
+  font-size: 72rpx;
+  color: #FFFFFF;
+  line-height: 80rpx;
+  letter-spacing: 2rpx;
+  margin-top: 10rpx;
+}
+.coupons .coupons-item-l .coupons-item-l-2.data-v-4957c4fd {
+  font-size: 28rpx;
+  color: #FFFFFF;
+  line-height: 40rpx;
+}
+.coupons .coupons-item-l .coupons-item-l-3.data-v-4957c4fd {
+  width: 200rpx;
+  height: 48rpx;
+  background: -webkit-gradient(linear, left top, right top, from(#F3122B), color-stop(100%, #F41B24), to(#FD5204));
+  background: -webkit-linear-gradient(left, #F3122B 0%, #F41B24 100%, #FD5204 100%);
+  background: linear-gradient(90deg, #F3122B 0%, #F41B24 100%, #FD5204 100%);
+  -webkit-border-radius: 24rpx;
+          border-radius: 24rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  margin-bottom: 20rpx;
+}
+.coupons .coupons-item-r.data-v-4957c4fd {
+  width: 86rpx;
+  height: 100%;
+  background-color: #FD4601;
+  -webkit-border-radius: 0 30rpx 30rpx 0;
+          border-radius: 0 30rpx 30rpx 0;
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(151, 7, 7, 0.4);
+          box-shadow: 0px 0px 6px 0px rgba(151, 7, 7, 0.4);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-writing-mode: vertical-rl;
+          writing-mode: vertical-rl;
+  letter-spacing: 10rpx;
+  color: #FFFFFF;
+  font-size: 44rpx;
+}
+.coupons .coupons-item .bor.data-v-4957c4fd {
+  position: absolute;
+  left: 8rpx;
+  top: 8rpx;
+  width: 316rpx;
+  height: 200rpx;
+  -webkit-border-radius: 20rpx;
+          border-radius: 20rpx;
+  opacity: 0.8;
+  border: 2rpx dashed #FFFFFF;
+}
+.similar-content-main.data-v-4957c4fd {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.similar-content-main .similar-product-list.data-v-4957c4fd {
+  -webkit-border-radius: 20rpx;
+          border-radius: 20rpx;
+  background: #FFFFFF;
+  width: 336rpx;
+  margin-bottom: 20rpx;
+}
+.similar-content-main .similar-product-list image.data-v-4957c4fd {
+  height: 336rpx;
+  width: 336rpx;
+  -webkit-border-radius: 20rpx 20rpx 0 0;
+          border-radius: 20rpx 20rpx 0 0;
+}
+.similar-content-main .similar-product-list > view.data-v-4957c4fd {
+  margin: 20rpx;
+}
+.similar-content-main .similar-product-list .pro-name.data-v-4957c4fd {
+  font-size: 32rpx;
+  font-weight: 400;
+  color: #333333;
+  line-height: 44rpx;
+  width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.similar-content-main .similar-product-list .shop.data-v-4957c4fd {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #999999;
+  line-height: 34rpx;
+}
+

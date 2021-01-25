@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "搜索",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "uni-popup": "/components/uni-popup/uni-popup",
+    "head": "/components/head"
+  }
+}

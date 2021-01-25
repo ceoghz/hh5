@@ -1,0 +1,165 @@
+.address.data-v-3477a11e {
+  height: 100%;
+  background-color: #F4F4F4;
+  width: 100%;
+}
+.address .address-main.data-v-3477a11e {
+  width: 100%;
+  min-height: 100rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20rpx 30rpx;
+  background-color: #F4F4F4;
+  position: relative;
+}
+.address .address-main .address-list.data-v-3477a11e {
+  width: 100%;
+  min-height: 50rpx;
+  -webkit-border-radius: 20rpx;
+          border-radius: 20rpx;
+  background-color: #FFFFFF;
+  margin-bottom: 20rpx;
+}
+.address .address-main .address-list-left.data-v-3477a11e {
+  width: 123rpx;
+}
+.address .address-main .address-list-left .img.data-v-3477a11e {
+  margin-top: 60rpx;
+  margin-left: 20rpx;
+}
+.address .address-main .address-list-left > view.data-v-3477a11e {
+  margin-left: 20rpx;
+}
+.address .address-main .address-list-left .btt.data-v-3477a11e {
+  font-size: 32rpx;
+  color: #FA6E39;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  padding: 0;
+  -webkit-border-radius: 0;
+          border-radius: 0;
+  margin-top: 72rpx;
+  margin-bottom: 20rpx;
+  width: 80rpx;
+  height: 44rpx;
+  background: #FFECE6;
+  border: none;
+}
+.address .address-main .address-list-right .address-list-right-1.data-v-3477a11e {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  margin-left: 20rpx;
+}
+.address .address-main .address-list-right .address-list-right-1 > view.data-v-3477a11e {
+  line-height: 50rpx;
+  margin-top: 20rpx;
+}
+.address .address-main .address-list-right .address-list-right-2.data-v-3477a11e {
+  line-height: 50rpx;
+  margin-left: 20rpx;
+}
+.address .address-main .address-list-right .address-list-right-3.data-v-3477a11e {
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+}
+.address .address-main .address-list-right .address-list-right-3 .bnn.data-v-3477a11e {
+  height: 60rpx;
+  width: 80rpx;
+  border: none;
+  font-size: 32rpx;
+  padding: 0;
+  float: right;
+  -webkit-border-radius: 0;
+          border-radius: 0;
+  color: #666666;
+  line-height: 60rpx;
+}
+.address .address-footer.data-v-3477a11e {
+  height: 138rpx;
+  width: 100% ;
+  border-top: 2rpx solid #979797;
+  position: fixed;
+  bottom: 0;
+  background: #FFFFFF;
+}
+.address .address-footer-main.data-v-3477a11e {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.address .address-footer-main .add-btn.data-v-3477a11e {
+  width: 690rpx;
+  height: 80rpx;
+  background: -webkit-gradient(linear, left top, right top, from(#FD8A03), to(#FD5700));
+  background: -webkit-linear-gradient(left, #FD8A03 0%, #FD5700 100%);
+  background: linear-gradient(to right, #FD8A03 0%, #FD5700 100%);
+  -webkit-border-radius: 40rpx;
+          border-radius: 40rpx;
+  color: #FFFFFF;
+  line-height: 44px;
+  font-size: 32rpx;
+}
+/* 提示窗口 */
+.uni-tip.data-v-3477a11e {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  padding: 15px;
+  width: 300px;
+  background-color: #fff;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+}
+.uni-tip-title.data-v-3477a11e {
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+.uni-tip-content.data-v-3477a11e {
+  /* padding: 15px;
+*/
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+.uni-tip-group-button.data-v-3477a11e {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  margin-top: 20px;
+}
+.uni-tip-button.data-v-3477a11e {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  text-align: center;
+  font-size: 14px;
+  color: #3b4144;
+}
+

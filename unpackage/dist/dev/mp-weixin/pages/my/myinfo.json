@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "我的信息",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "uni-popup": "/components/uni/uni-popup/uni-popup",
+    "head": "/components/head",
+    "gpp-date-picker": "/components/gpp-datePicker/gpp-datePicker",
+    "uni-section": "/components/uni/uni-section/uni-section",
+    "uni-icons": "/components/uni/uni-icons/uni-icons"
+  }
+}

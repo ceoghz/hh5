@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "协商历史",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "head": "/components/head"
+  }
+}
