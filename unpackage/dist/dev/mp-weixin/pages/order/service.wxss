@@ -1,0 +1,115 @@
+.service {
+  height: 100%;
+  width: 100%;
+  background: #F4F4F4;
+}
+.service-content {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20rpx 30rpx;
+}
+.service-content .service-product {
+  width: 100%;
+  background: #FFFFFF;
+  -webkit-border-radius: 20rpx;
+          border-radius: 20rpx;
+  overflow: hidden;
+}
+.service-content .service-product-top {
+  width: 100%;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #333333;
+  line-height: 50rpx;
+  margin: 20rpx 0 0 20rpx;
+}
+.service-content .service-product-main {
+  height: 200rpx;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+}
+.service-content .service-product-main > image {
+  width: 200rpx;
+  height: 200rpx;
+  -webkit-border-radius: 20rpx;
+          border-radius: 20rpx;
+}
+.service-content .service-product-main-right {
+  width: calc(100% - 250rpx);
+  margin-left: 25rpx;
+}
+.service-content .service-product-main-right-1 {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: #333333;
+  line-height: 40rpx;
+}
+.service-content .service-product-main-right-2 {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #666666;
+  line-height: 34rpx;
+  margin-top: 24rpx;
+}
+.service-content .service-product-main-right > view {
+  width: 100%;
+}
+.service-content .service-type {
+  width: 100%;
+  background: #FFFFFF;
+  -webkit-border-radius: 20rpx;
+          border-radius: 20rpx;
+  overflow: hidden;
+  margin-top: 20rpx;
+}
+.service-content .service-type-top {
+  width: 100%;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #333333;
+  line-height: 50rpx;
+  margin: 20rpx 0 0 20rpx;
+}
+.service-content .service-type-main {
+  width: 100%;
+  overflow: hidden;
+}
+.service-content .service-type-main-item {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  margin-top: 46rpx;
+}
+.service-content .service-type-main-item .item-c {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+}
+.service-content .service-type-main-item .item-c > view:first-child {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #333333;
+  line-height: 44rpx;
+}
+.service-content .service-type-main-item .item-c > view:last-child {
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 34rpx;
+}
+

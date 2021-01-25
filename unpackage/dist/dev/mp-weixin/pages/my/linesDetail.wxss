@@ -1,0 +1,60 @@
+.lines {
+  height: 100%;
+  width: 100%;
+  background: #f4f4f4;
+}
+.lines-content {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20rpx 30rpx;
+  overflow: hidden;
+  background-color: #f4f4f4;
+}
+.lines-content-box {
+  width: 100%;
+  background: #FFFFFF;
+  -webkit-border-radius: 20rpx;
+          border-radius: 20rpx;
+}
+.lines-content-box > view {
+  width: 100%;
+  height: 90rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.lines-content-box-head > view {
+  width: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #333333;
+  line-height: 50px;
+}
+.lines-content-box-list > view {
+  font-size: 36rpx;
+  font-weight: 400;
+  color: #333333;
+  line-height: 50px;
+}
+.clear_fix:after {
+  content: "";
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+

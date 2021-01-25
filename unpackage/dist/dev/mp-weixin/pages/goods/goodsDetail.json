@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "商品详情",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "mp-html": "/components/mp-html/mp-html",
+    "vk-data-goods-sku-popup": "/components/vk-data-goods-sku-popup/vk-data-goods-sku-popup",
+    "head": "/components/head",
+    "uni-popup": "/components/uni-popup/uni-popup",
+    "uni-popup-message": "/components/uni-popup/uni-popup-message",
+    "uni-popup-dialog": "/components/uni-popup/uni-popup-dialog",
+    "specificationsnew": "/components/specificationsnew",
+    "uni-number-box": "/components/uni-number-box/uni-number-box"
+  }
+}

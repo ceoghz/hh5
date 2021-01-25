@@ -1,0 +1,107 @@
+.myinfo.data-v-42681374 {
+  height: 100%;
+  width: 100%;
+  background: #f4f4f4;
+}
+.myinfo-content.data-v-42681374 {
+  background: #FFFFFF;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 30rpx;
+  width: 100%;
+}
+.myinfo-content > view.data-v-42681374 {
+  width: 100%;
+  height: 108rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  border-top: 2rpx solid #F4F4F4;
+}
+.myinfo-content .portrait .portrait-right.data-v-42681374 {
+  height: 74rpx;
+  width: 74rpx;
+  -webkit-border-radius: 37rpx;
+          border-radius: 37rpx;
+}
+.myinfo-content .name .name-right.data-v-42681374 {
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.myinfo-content .birthday .birthday-right.data-v-42681374 {
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+/* 提示窗口 */
+.uni-tip.data-v-42681374 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  padding: 15px 0 0;
+  width: 300px;
+  background-color: #fff;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+}
+.uni-tip-title.data-v-42681374 {
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 36rpx;
+  color: #333;
+}
+.uni-tip-content.data-v-42681374 {
+  /* padding: 15px;
+*/
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+.uni-tip-group-button.data-v-42681374 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  margin-top: 20px;
+  border-top: 2rpx solid #F4F4F4;
+}
+.uni-tip-button.data-v-42681374 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  font-size: 40rpx;
+  color: #333333;
+  height: 118rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+

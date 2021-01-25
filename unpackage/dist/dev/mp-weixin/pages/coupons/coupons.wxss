@@ -1,0 +1,195 @@
+.coupons.data-v-0b776522 {
+  height: 100%;
+  width: 100%;
+  background: #F4F4F4;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+}
+.coupons-header.data-v-0b776522 {
+  width: 100%;
+}
+.coupons-header-main.data-v-0b776522 {
+  width: 100%;
+  height: 108rpx;
+  background: #FFFFFF;
+}
+.coupons-header-main > view.data-v-0b776522 {
+  width: 50%;
+  height: 1005;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  position: relative;
+}
+.coupons-header-main > view > ._p.data-v-0b776522 {
+  width: 96rpx;
+  height: 6rpx;
+  background: #FA6E39;
+  -webkit-border-radius: 3rpx;
+          border-radius: 3rpx;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-left: -48rpx;
+}
+.coupons-content.data-v-0b776522 {
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0rpx 30rpx 20rpx;
+  background: #F4F4F4;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  overflow: hidden;
+}
+.coupons-content .coupons-list.data-v-0b776522 {
+  width: 100%;
+  height: 290rpx;
+  background-color: #FFFFFF;
+  -webkit-border-radius: 20rpx;
+          border-radius: 20rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20rpx;
+  margin-top: 20rpx;
+}
+.coupons-content .coupons-box.data-v-0b776522 {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  position: relative;
+}
+.coupons-content .coupons-box .abb.data-v-0b776522 {
+  position: absolute;
+  top: 0;
+  left: 300rpx;
+  height: 100%;
+  width: 20rpx;
+  border-left: 20rpx dotted #FFFFFF;
+}
+.coupons-content .coupons-box-left.data-v-0b776522 {
+  height: 100%;
+  width: 310rpx;
+  background: -webkit-gradient(linear, left top, right top, from(#FD8A03), to(#FD5700));
+  background: -webkit-linear-gradient(left, #FD8A03 0%, #FD5700 100%);
+  background: linear-gradient(90deg, #FD8A03 0%, #FD5700 100%);
+  -webkit-border-radius: 20rpx;
+          border-radius: 20rpx;
+  color: #FFFFFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.coupons-content .coupons-box-right.data-v-0b776522 {
+  height: 100%;
+  width: 340rpx;
+  background: #FBF7F2;
+  -webkit-border-radius: 20rpx;
+          border-radius: 20rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: space-around;
+          justify-content: space-around;
+}
+.coupons-content .coupons-box-right-1.data-v-0b776522 {
+  font-size: 24rpx;
+  color: #333333;
+  line-height: 34px;
+}
+.coupons-content .coupons-box-right-2.data-v-0b776522 {
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 34px;
+}
+.coupons-content .coupons-box-right-3.data-v-0b776522 {
+  height: 60rpx;
+  width: 300rpx;
+  -webkit-border-radius: 30rpx;
+          border-radius: 30rpx;
+  background: -webkit-gradient(linear, left top, right top, from(#F3122B), to(#FD5204));
+  background: -webkit-linear-gradient(left, #F3122B 0%, #FD5204 100%);
+  background: linear-gradient(90deg, #F3122B 0%, #FD5204 100%);
+  color: #fff;
+}
+.coupons .add-address-footer.data-v-0b776522 {
+  height: 138rpx;
+  width: 100% ;
+  border-top: 2rpx solid #979797;
+  position: fixed;
+  bottom: 0;
+  background: #FFFFFF;
+}
+.coupons .add-address-footer-main.data-v-0b776522 {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.coupons .add-address-footer-main .add-btn.data-v-0b776522 {
+  width: 690rpx;
+  height: 80rpx;
+  background: -webkit-gradient(linear, left top, right top, from(#FD8A03), to(#FD5700));
+  background: -webkit-linear-gradient(left, #FD8A03 0%, #FD5700 100%);
+  background: linear-gradient(to right, #FD8A03 0%, #FD5700 100%);
+  -webkit-border-radius: 40rpx;
+          border-radius: 40rpx;
+  color: #FFFFFF;
+  line-height: 44px;
+  font-size: 32rpx;
+}
+.data-v-0b776522 .uni-scroll-view ::-webkit-scrollbar {
+  /* 隐藏滚动条，但依旧具备可以滚动的功能 */
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+  background: transparent;
+}
+.data-v-0b776522 ::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+  background: transparent;
+}
+

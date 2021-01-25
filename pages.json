@@ -1,0 +1,363 @@
+{
+
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages  优惠卷 店铺首页
+	
+		{
+			"path": "pages/tabBar/my",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"navigationStyle" : "custom",
+				 "enablePullDownRefresh": true,  //设置为true表示当前页面开启下拉刷新
+				"backgroundTextStyle": "dark"
+			}
+		},
+		{
+			"path": "pages/coupons/volumeCenter",
+			"style": {
+				"navigationBarTitleText": "领卷中心",
+				"navigationStyle" : "custom"
+			}
+		},
+		{
+			"path": "pages/tabBar/home",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"navigationStyle" : "custom"
+			}
+		},
+		{
+			"path": "pages/order/after",
+			"style": {
+				"navigationBarTitleText": "退款售后",
+				"navigationStyle" : "custom"
+			}
+		},
+		{
+			"path": "pages/goods/allGoods",
+			"style": {
+				"navigationBarTitleText": "二级分类",
+				"navigationStyle" : "custom"
+			}
+		},
+		{
+			"path":"pages/order/confirmorder",
+			"style": {
+				"navigationBarTitleText": "确认订单",
+				"navigationStyle" : "custom"
+			}
+		},
+		{
+			"path":"pages/search/search",
+			"style": {
+				"navigationBarTitleText": "搜索",
+				"navigationStyle" : "custom"
+			}
+		},
+		
+		{
+			"path":"pages/personal/myOrder",
+			"style":{
+				"navigationBarTitleText":"我的订单",
+				"navigationStyle" : "custom"
+			}
+		},
+		{
+			"path":"pages/personal/orderDetail",
+			"style":{
+				"navigationBarTitleText":"订单详情",
+				"navigationStyle" : "custom"
+			}
+		},
+		{
+			"path":"pages/order/logistics",
+			"style":{
+				"navigationBarTitleText":"查看物流",
+				"navigationStyle" : "custom"
+			}
+		},
+	
+		{
+			"path":"pages/pay/payorder",
+			"style":{
+				"navigationBarTitleText":"支付订单",
+				"navigationStyle":"custom"
+			}
+		},
+		{
+			"path":"pages/pay/paycomplete",
+			"style":{
+				"navigationBarTitleText":"支付完成",
+				"navigationStyle":"custom"
+			}
+		},
+	   {
+	   	"path":"pages/my/footprint",
+	   	"style":{
+	   		"navigationBarTitleText":"浏览足迹",
+	   		"navigationStyle":"custom"
+	   	}
+	   },
+		{
+			"path":"pages/coupons/coupons",
+			"style":{
+				"navigationBarTitleText":"优惠卷",
+				"navigationStyle":"custom"
+			}
+		},
+		{
+			"path":"pages/personal/message",
+			"style":{
+				"navigationBarTitleText":"消息",
+				"navigationStyle":"custom"
+			}
+		},
+		{
+			"path":"pages/personal/modify",
+			"style":{
+				"navigationBarTitleText":"修改地址",
+				"navigationStyle":"custom"
+			}
+		},
+		
+		{
+			"path":"pages/evaluation/evaluation",
+			"style":{
+				"navigationBarTitleText":"评价",
+				"navigationStyle" : "custom"
+			}
+		},
+	
+		{
+			"path":"pages/shop/shop",
+			"style":{
+				"navigationBarTitleText": "店铺首页",
+				"navigationStyle" : "custom"
+			}
+		},
+		
+		{
+			"path":"pages/shop/shopClass",
+			"style":{
+				"navigationBarTitleText": "店铺分类",
+				"navigationStyle" : "custom"
+			}
+		},
+		{
+			"path":"pages/shouquan/index",
+			"style":{
+				"navigationBarTitleText": "授权",
+				"navigationStyle" : "custom"
+			}
+		},
+		{
+			"path":"pages/personal/address",
+			"style":{
+				"navigationBarTitleText": "收货地址",
+				"navigationStyle" : "custom"
+			}
+		},
+		{
+			"path":"pages/personal/grade",
+			"style":{
+				"navigationBarTitleText": "我的积分",
+				"navigationStyle" : "custom"
+			}
+		},	
+		{
+			"path": "pages/order/refund",
+			"style": {
+				"navigationBarTitleText": "申请售后",
+				"navigationStyle" : "custom"
+				
+			}
+		},
+		{
+			"path": "pages/goods/similar",
+			"style": {
+				"navigationBarTitleText": "找相似",
+				"navigationStyle" : "custom"
+				
+			}
+		},
+	
+		{
+			"path": "pages/order/service",
+			"style": {
+				"navigationBarTitleText": "选择服务",
+				"navigationStyle" : "custom"
+				
+			}
+		},
+	
+		{
+			"path": "pages/my/collection",
+			"style": {
+				"navigationBarTitleText": "我的收藏",
+				"navigationStyle" : "custom"
+				 
+			}
+		},
+	
+		{
+			"path": "pages/msg/infoDetail",
+			"style": {
+				"navigationBarTitleText": "系统消息",
+				"navigationStyle" : "custom"
+			}
+		},
+		{
+			"path": "pages/tabBar/classification",
+			"style": {
+				"navigationBarTitleText": "全部分类",
+				"navigationStyle" : "custom"
+				
+			}
+		},
+		{
+			"path": "pages/my/linesDetail",
+			"style": {
+				"navigationBarTitleText": "余额明细",
+				"navigationStyle" : "custom"
+			}
+		},
+	     {
+	     	"path":"pages/my/myinfo",
+	     	"style":{
+	     		"navigationBarTitleText":"我的信息",
+	     		"navigationStyle":"custom"
+	     	}
+	     },
+		{
+			"path":"pages/msg/history",
+			"style":{
+				"navigationBarTitleText":"协商历史",
+				"navigationStyle":"custom"
+			}
+		},
+	
+		{
+			"path":"pages/login/loginH5",
+			"style":{
+				"navigationBarTitleText":"登录",
+				"navigationStyle":"custom"
+			}
+		},
+		{
+			"path": "pages/tabBar/cart",
+			"style": {
+				"navigationBarTitleText": "购物车",
+				"navigationStyle" : "custom"
+			}
+		},			
+		
+		
+		
+		{
+			"path":"pages/personal/login",
+			"style":{
+				"navigationBarTitleText":"绑定手机号",
+				"navigationStyle":"custom"
+			}
+		},
+	
+		{
+			"path":"pages/personal/addAddress",
+			"style":{
+				"navigationBarTitleText": "新增地址",
+				"navigationStyle" : "custom"
+			}
+		},
+		{
+			"path":"pages/personal/aboutMe",
+			"style":{
+				"navigationBarTitleText": "关于我们",
+				"navigationStyle" : "custom"
+			}
+		},
+		{
+			"path": "pages/goods/erGoods",
+			"style": {
+				"navigationBarTitleText": "二级分类商品",
+				"navigationStyle" : "custom"
+			}
+		},
+		{
+			"path": "pages/goods/brandGoods",
+			"style": {
+				"navigationBarTitleText": "品牌商品",
+				"navigationStyle" : "custom"
+			}
+		},
+		{
+			"path": "pages/goods/alikeGoods",
+			"style": {
+				"navigationBarTitleText": "相似商品",
+				"navigationStyle" : "custom"
+			}
+		},
+		{
+			"path": "pages/goods/goodsDetail",
+			"style": {
+				"navigationBarTitleText": "商品详情",
+				"navigationStyle" : "custom"
+			}
+		},
+		{
+			"path": "pages/aboutGoods/allPing",
+			"style": {
+				"navigationBarTitleText": "全部评价",
+				"navigationStyle" : "custom"
+			}
+		},
+		{
+			"path": "pages/aboutGoods/service",
+			"style": {
+				"navigationBarTitleText": "客服",
+				"navigationStyle" : "custom"
+			}
+		}
+		
+		
+		
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"permission": {
+	    "scope.userLocation": {
+	      "desc": "你的位置信息将用于小程序位置接口的效果展示" // 高速公路行驶持续后台定位
+	    }
+	  },
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#FA6E39",
+		"borderStyle": "black",
+		"backgroundColor": "#F8F8F8",
+		"list": [{
+				"pagePath": "pages/tabBar/home",
+				"iconPath": "static/img/icon_home_1.png",
+				"selectedIconPath": "static/img/home1.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/tabBar/classification",
+				"iconPath": "static/img/class1.png",
+				"selectedIconPath": "static/img/icon_classification.png",
+				"text": "分类"
+			}, {
+				"pagePath": "pages/tabBar/cart",
+				"iconPath": "static/img/cart.png",
+				"selectedIconPath": "static/img/shop_car.png",
+				"text": "购物车"
+			}, {
+				"pagePath": "pages/tabBar/my",
+				"iconPath": "static/img/my1.png",
+				"selectedIconPath": "static/img/icon_me.png",
+				"text": "我的"
+			}
+		]
+	}
+}

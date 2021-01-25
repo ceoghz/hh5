@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "店铺首页",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "head": "/components/head",
+    "recommended": "/components/shop/recommended",
+    "all-product": "/components/shop/allProduct",
+    "product-class": "/components/shop/productClass"
+  }
+}

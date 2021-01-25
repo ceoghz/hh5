@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "评价",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "head": "/components/head",
+    "uni-badge": "/components/uni/uni-badge/uni-badge",
+    "uni-section": "/components/uni/uni-section/uni-section",
+    "uni-rate": "/components/uni/uni-rate/uni-rate"
+  }
+}

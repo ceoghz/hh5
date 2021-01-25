@@ -1,0 +1,98 @@
+.border.data-v-b86c55f0 {
+  border-bottom: none!important;
+}
+.head.data-v-b86c55f0 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #007AFF;
+  width: 100%;
+  z-index: 9999;
+}
+.head.head_w.data-v-b86c55f0 {
+  background: transparent;
+  border-bottom: 0;
+}
+.head .white.data-v-b86c55f0 {
+  background: #FFFFFF;
+}
+.head .header.data-v-b86c55f0 {
+  color: #007AFF;
+  border: none;
+}
+.head .header .header_img.data-v-b86c55f0 {
+  top: 46rpx !important;
+  left: 10rpx !important;
+  width: 64rpx !important;
+  height: 64rpx !important;
+}
+.head .header-title.data-v-b86c55f0 {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  line-height: 88rpx;
+  color: #007AFF;
+  font-size: 40rpx;
+}
+.head .header-title.title_w.data-v-b86c55f0 {
+  color: #FFFFFF !important;
+}
+.head .header-title .abb.data-v-b86c55f0 {
+  background: -webkit-gradient(linear, left top, right top, from(#FD8A03), to(#FD5700));
+  background: -webkit-linear-gradient(left, #FD8A03 0%, #FD5700 100%);
+  background: linear-gradient(to right, #FD8A03 0%, #FD5700 100%);
+}
+.head .header-left.data-v-b86c55f0 {
+  height: 88rpx;
+  width: 160rpx;
+  position: absolute;
+  z-index: 9999;
+}
+.head .header-left ._img.data-v-b86c55f0 {
+  position: absolute;
+  top: 26rpx;
+  left: 20rpx;
+  width: 24rpx;
+  height: 36rpx;
+}
+.head .header-right.data-v-b86c55f0 {
+  position: absolute;
+  background: #F6f6f6;
+  line-height: 44px;
+  color: #020202;
+  font-size: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  height: 88rpx;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  width: 100%;
+  padding-right: 24rpx;
+}
+.head .header-right ._img.data-v-b86c55f0 {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.head .header-right .content.data-v-b86c55f0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  color: #020202;
+}
+.head .abb.data-v-b86c55f0 {
+  background: -webkit-gradient(linear, left top, right top, from(#FD8A03), to(#FD5700));
+  background: -webkit-linear-gradient(left, #FD8A03 0%, #FD5700 100%);
+  background: linear-gradient(to right, #FD8A03 0%, #FD5700 100%);
+}
+

@@ -1,0 +1,237 @@
+.fen.data-v-0bed1728 {
+  height: 100%;
+  width: 100%;
+  font-family: '苹方-简 常规体';
+  background: #f4f4f4;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+}
+.fen .header.data-v-0bed1728 {
+  width: 100%;
+}
+.title.data-v-0bed1728 {
+  width: 750rpx;
+  height: 108rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99;
+}
+.back.data-v-0bed1728 {
+  width: 60rpx;
+  height: 108rpx;
+  margin: 24rpx 0;
+  margin-right: 224rpx;
+}
+.back image.data-v-0bed1728 {
+  width: 60rpx;
+  height: 60rpx;
+}
+.title text.data-v-0bed1728 {
+  font-size: 40rpx;
+  font-family: '苹方-简 中黑体';
+  color: #333;
+  line-height: 108rpx;
+}
+.service.data-v-0bed1728 {
+  margin-bottom: 50rpx;
+  overflow-y: auto;
+  padding: 20rpx;
+  padding-bottom: 40rpx;
+}
+.isservice.data-v-0bed1728 {
+  overflow: hidden;
+  overflow-y: auto;
+}
+.service ._li.data-v-0bed1728 {
+  background: #eee;
+  width: 100%;
+  padding-bottom: 40rpx;
+  clear: both;
+}
+.user.data-v-0bed1728 {
+  float: left;
+  width: 80rpx;
+  height: 80rpx;
+  background: #999;
+}
+.box.data-v-0bed1728 {
+  width: 100%;
+  min-height: 0;
+  background: transparent;
+}
+.info.data-v-0bed1728 {
+  position: relative;
+  background: white;
+  -webkit-border-radius: 15rpx;
+          border-radius: 15rpx;
+  margin: 0 15%;
+  font-size: 30rpx;
+  color: #020202;
+  max-width: 400rpx;
+  padding: 15rpx;
+  height: 100%;
+}
+.isImg.data-v-0bed1728 {
+  width: 150rpx;
+  height: 150rpx;
+}
+.send_top.data-v-0bed1728,
+.sendBtn.data-v-0bed1728,
+.send_xe.data-v-0bed1728 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.sendBtn.data-v-0bed1728 {
+  text-align: center;
+  border: 1px solid #eee;
+  font-size: 100rpx;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  color: #020202;
+  width: 78rpx;
+  height: 78rpx;
+}
+.sendBtn > ._div.data-v-0bed1728 {
+  width: auto;
+  height: auto;
+  display: inline-block !important;
+  display: inline;
+}
+.sendBtn > ._div ._img.data-v-0bed1728 {
+  width: 40rpx;
+  height: 40rpx;
+}
+.send.data-v-0bed1728 {
+  width: 100%;
+  text-align: right;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #eee;
+}
+.send_top.data-v-0bed1728 {
+  -webkit-justify-content: space-around;
+          justify-content: space-around;
+  padding: 20rpx;
+  border-bottom: 1px solid #DDDDDD;
+  border-top: 1px solid #ddd;
+}
+.send_top > input.data-v-0bed1728 {
+  width: 620rpx;
+  height: 78rpx;
+  border: 1px solid #DDDDDD;
+  -webkit-border-radius: 10rpx;
+          border-radius: 10rpx;
+  padding: 0 20rpx;
+  margin-right: 10rpx;
+}
+.send_bottom.data-v-0bed1728 {
+  width: 100%;
+  padding: 30rpx;
+}
+.send_folat.data-v-0bed1728 {
+  float: left;
+}
+.send_xe.data-v-0bed1728 {
+  width: 120rpx;
+  height: 120rpx;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 14rpx;
+          border-radius: 14rpx;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+.send_folat > ._p.data-v-0bed1728 {
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 16rpx;
+}
+.isMe.data-v-0bed1728 {
+  float: right;
+}
+.isMeBox .info.data-v-0bed1728 {
+  background: #BE9E5F;
+  color: white;
+  /*left:13.5%;*/
+}
+.triangleLeft.data-v-0bed1728,
+.triangleRight.data-v-0bed1728 {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.2rem 0.2rem 0.2rem 0;
+  border-color: transparent white transparent transparent;
+  /*透明 灰 透明 透明 */
+}
+.triangleLeft.data-v-0bed1728 {
+  position: absolute;
+  top: 0.2rem;
+  left: -0.15rem;
+}
+.triangleRight.data-v-0bed1728 {
+  border-width: 0.2rem 0 0.2rem 0.2rem;
+  border-color: transparent transparent transparent #BE9E5F;
+  /*透明 透明 透明 灰*/
+  position: absolute;
+  top: 0.2rem;
+  right: -0.15rem;
+}
+/* @media screen and (max-height:800px){
+    	.service{height: 11.4rem;}
+    	.isservice{height: 7.2rem;}
+    }
+    
+    @media screen and (min-height:800px){
+    	.service{height: 14.2rem;}
+    	.isservice{height: 10rem;}
+    }
+    @media screen and (min-height:820px){
+    	.service{height: 13rem;}
+    	.isservice{height: 8.5rem;}
+    } */
+.bigImg.data-v-0bed1728 {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #020202;
+  width: 100%;
+  z-index: 50;
+}
+.bigImg > ._img.data-v-0bed1728 {
+  width: 100%;
+}
+.box.data-v-0bed1728:after {
+  display: block;
+  content: '';
+  clear: both;
+}
+.right.data-v-0bed1728 {
+  float: right;
+  margin: 0 3%;
+}
+

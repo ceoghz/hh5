@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "支付订单",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "head": "/components/head",
+    "uni-countdown": "/components/uni/uni-countdown/uni-countdown",
+    "uni-section": "/components/uni/uni-section/uni-section"
+  }
+}

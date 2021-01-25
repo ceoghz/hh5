@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "客服",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "head": "/components/head"
+  }
+}

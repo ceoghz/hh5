@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "新增地址",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "head": "/components/head",
+    "mpvue-city-picker": "/components/mpvue-citypicker/mpvueCityPicker"
+  }
+}

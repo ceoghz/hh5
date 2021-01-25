@@ -1,0 +1,102 @@
+.shop.data-v-71bf3ec6 {
+  height: 100%;
+  width: 100%;
+  background: #F4F4F4;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+}
+.shop .shop-header.data-v-71bf3ec6 {
+  width: 100%;
+  background: #FFFFFF;
+}
+.shop .shop-header-main.data-v-71bf3ec6 {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 34rpx;
+}
+.shop .shop-header-main-top.data-v-71bf3ec6 {
+  width: 100%;
+  height: 180rpx;
+  border-top: 2rpx solid #F4F4F4;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.shop .shop-header-main-top .shop-logo.data-v-71bf3ec6 {
+  border: 2rpx solid #BABABA;
+  height: 100rpx;
+  width: 100rpx;
+  -webkit-border-radius: 50rpx;
+          border-radius: 50rpx;
+}
+.shop .shop-header-main-top .shop-name.data-v-71bf3ec6 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  margin-left: 20rpx;
+}
+.shop .shop-header-main-top .shop-name-t .shop-share.data-v-71bf3ec6 {
+  width: 100rpx;
+}
+.shop .shop-header-main-top .shop-name-b.data-v-71bf3ec6 {
+  color: #999999;
+  line-height: 34px;
+  font-size: 24rpx;
+}
+.shop .shop-header-main-bottom.data-v-71bf3ec6 {
+  border-top: 2rpx solid #F4F4F4;
+  width: 100%;
+  height: 108rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-around;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.shop .shop-header-main-bottom ._li.data-v-71bf3ec6 {
+  list-style: none;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  width: 33%;
+  position: relative;
+}
+.shop .shop-header-main-bottom ._li ._p.data-v-71bf3ec6 {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -32rpx;
+  width: 64rpx;
+  height: 6rpx;
+  background: #FA6E39;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+}
+.shop .shop-content.data-v-71bf3ec6 {
+  width: 100%;
+  height: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  overflow: hidden;
+}
+

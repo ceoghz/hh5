@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "查看物流",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "head": "/components/head"
+  }
+}

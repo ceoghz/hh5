@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "uni-list-item": "/components/uni/uni-list-item/uni-list-item",
+    "uni-list": "/components/uni/uni-list/uni-list"
+  }
+}
