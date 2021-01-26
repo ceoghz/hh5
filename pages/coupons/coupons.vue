@@ -10,34 +10,68 @@
 				</view>
 			</view>
 		</view>
-		<view class="coupons-content">
-			<scroll-view scroll-y='true' style="height: 100%;" @scrolltolower = 'scrolltolower'> 
-				<view v-if="coupons_list.length>0" class="coupons-list" v-for="(index) in coupons_list" :key="index">
+		<view class="coupons-content" v-if="type==0">
+			<view v-if="coupons_list.length>0">
+				<view class="coupons-list" v-for="(item,index) in coupons_list" :key="index">
 					<view class="coupons-box">
 					   <view class="coupons-box-left d-felx flex-column ">
-					   	   <view class="" style="color:#FFFFFF;line-height:124upx;">
-					   	   	   <text style="font-size: 88upx;">65</text> 
-							   <text style="font-size: 48upx;">元</text>
+					   	   <view class="" style="color:#FFFFFF;line-height:124upx;" v-if="item.discount>0">
+					   	   	   <text style="font-size: 88upx;">{{item.discount}}</text> 
 					   	   </view>
-						   <view class="" style="font-size: 32upx;" >满100元可用</view>
+					   	   <view class="" style="color:#FFFFFF;line-height:124upx;" v-else>
+					   	   	   <text style="font-size: 68upx;">{{item.money}}</text> 
+					   	   							   <text style="font-size: 48upx;">元</text>
+					   	   </view>
+						   <view class="" style="font-size: 32upx;" >满{{item.z_money}}元可用</view>
 					   </view>
 					   <view class="coupons-box-right  d-felx flex-column " >
-							<view class="coupons-box-right-1">新人优惠券</view>
-							<view class="coupons-box-right-2">有效期至 2020.08.31 23:59</view>
-							<view class="coupons-box-right-3 d-flex a-center j-center" >立即使用</view>
+							<view class="coupons-box-right-1">{{item.name}}</view>
+							<view class="coupons-box-right-2">有效期至{{item.expiry_time}}</view>
+							<view class="coupons-box-right-3 d-flex a-center j-center" @click="goHome()">立即使用</view>
 					   </view>
 						<view class="abb"></view>
 					</view>
 				</view>
-				<view v-if="coupons_list.length===0" class="d-flex j-center" style="width: 100%;">
-					<image style="width: 560upx;height: 560upx;margin: 0 auto;" src="../../static/img/no_ming.png" mode=""></image>
+				<view class="uni-loadmore" v-if="showLoadMore">{{loadMoreText}}</view>
+			</view>	
+			<view v-else class="d-flex j-center" style="width: 100%;">
+				<image style="width: 560upx;height: 560upx;margin: 0 auto;" src="../../static/img/no_ming.png" mode=""></image>
+			</view>
+			
+		</view>
+		<view class="coupons-content" v-else>
+			<view v-if="coupons_list.length>0">
+				<view class="coupons-list" v-for="(item,index) in coupons_list" :key="index">
+					<view class="coupons-box">
+					   <view class="coupons-box-left d-felx flex-column " style="background:#BABABA">
+					   	   <view class="" style="color:#FFFFFF;line-height:124upx;" v-if="item.discount>0">
+					   	   	   <text style="font-size: 88upx;">{{item.discount}}</text> 
+					   	   </view>
+					   	   <view class="" style="color:#FFFFFF;line-height:124upx;" v-else>
+					   	   	   <text style="font-size: 68upx;">{{item.money}}</text> 
+					   	   							   <text style="font-size: 48upx;">元</text>
+					   	   </view>
+						   <view class="" style="font-size: 32upx;" >满{{item.z_money}}元可用</view>
+					   </view>
+					   <view class="coupons-box-right  d-felx flex-column "  style="background:#F4F4F4">
+							<view class="coupons-box-right-1">{{item.name}}</view>
+							<view class="coupons-box-right-2">有效期至{{item.expiry_time}}</view>
+							<view class="coupons-box-right-3 d-flex a-center j-center" style="background:#BABABA" @click="goHome()">立即使用</view>
+					   </view>
+						<view class="abb"></view>
+					</view>
 				</view>
-			</scroll-view>
+				<view class="uni-loadmore" v-if="showLoadMore">{{loadMoreText}}</view>
+			</view>	
+			<view v-else class="d-flex j-center" style="width: 100%;">
+				<image style="width: 560upx;height: 560upx;margin: 0 auto;" src="../../static/img/no_ji.png" mode=""></image>
+			</view>
+			
 		</view>
 		<view class="" style="width: 100%;height:138upx;"></view>
 		<view class="add-address-footer" >
 			<view class="add-address-footer-main">
-				<view class="add-btn d-flex j-center a-center" >去领优惠卷</view>
+				<view class="add-btn d-flex j-center a-center" @click="goCenter()">去领更多卷</view>
 			</view>
 		</view>
 	</view>
@@ -53,9 +87,31 @@
 					{id:3,name:"已过期"}
 				],
 				isTab:0,
+				type:0,
 				page:1,
-				coupons_list:[]
+				coupons_list:[],
+				coupons:[],//下拉刷新的优惠券
+				loadMoreText: "加载中...",
+				showLoadMore: false,
 			}
+		},
+		//监听页面卸载
+		onUnload() {
+			this.coupons_list = [],
+			this.loadMoreText = "加载更多",
+			this.showLoadMore = false;
+		},
+		//拉到底部
+		onReachBottom() {
+			
+			this.page=this.page+1;
+			this.couponsRequest()
+			if(this.coupons==[]||this.coupons.length<10){
+				this.loadMoreText = "没有更多数据了!"
+				this.showLoadMore = true;
+				// console.log(this.showLoadMore,'到底部了')
+				return;
+			}	
 		},
 		components:{
 			Head
@@ -63,11 +119,13 @@
 		methods:{
 			tabClick(id){
 				this.isTab = id
-				let type = id
-				let page = 1
-				this.couponsRequest({page,type})
+				this.type = id
+				this.page = 1
+				this.coupons_list=[]
+				this.coupons=[]
+				this.couponsRequest()
 			},
-			couponsRequest({page=1,type=0}){
+			couponsRequest(){
 				this.$http.post("",{
 					access_id:uni.getStorageSync("access_id"),
 						store_id:1,
@@ -75,12 +133,30 @@
 						module:'app',
 						action:'coupon',
 						app:'user',
-						page:page,
-						type:type
+						page:this.page,
+						type:this.type
 				}).then(res=>{
 					console.log(res)
 					if(res.data.code === 200){
-						this.coupons_list = res.data.data.data
+						if(this.type==0){
+							this.coupons=[]
+							res.data.data.data.forEach((item,index)=>{
+								if(item.type==0){
+									this.coupons_list.push(item)
+									this.coupons.push(item)
+								}
+							})
+						}else if(this.type==3){
+							this.coupons=[]
+							res.data.data.data.forEach((item,index)=>{
+								if(item.type==3){
+									this.coupons_list.push(item)
+									this.coupons.push(item)
+								}
+							})
+						} 
+						
+						console.log(this.coupons_list,this.coupons,'uuu')
 					}else{
 						uni.showToast({
 							title:res.data.message,
@@ -94,6 +170,17 @@
 			scrolltolower(){
 				console.log(1)
 				
+			},
+			//去领券中心
+			goCenter(){
+				uni.navigateTo({
+				    url: '/pages/coupons/volumeCenter'
+				});
+			},
+			goHome(){
+				uni.switchTab({
+					url: '/pages/tabBar/home'
+				})
 			}
 		},
 		onLoad() {
@@ -137,12 +224,13 @@
 		}
 	    &-content{
 			width: 100%;
-			height: 100%;
+			// height: 100%;
 			box-sizing: border-box;
 			padding: 0upx 30upx 20upx;
 			background: #F4F4F4;
 			flex: 1;
-			overflow: hidden;
+			margin-bottom:138upx;
+			// overflow-y: scroll;
 			.coupons-list{
 				width: 100%;
 				height: 290upx;
@@ -249,6 +337,12 @@
 		 background: transparent;
 		}
 		
-		
+	.uni-loadmore{
+		width:100vw;
+		height:80rpx;
+		line-height:80rpx;
+		text-align:center;
+		padding-bottom:30rpx;
+	}	
 	
 </style>
