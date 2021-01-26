@@ -10,8 +10,8 @@
 					<image src='../../static/img/btn_checkBox_3.png'></image>收货成功！
 				</view>
 				<view class='shou'>
-					<view class="shou1">返回首页</view>
-					<view class="shou2">去评价</view>
+					<view class="shou1" @click="goHome">返回首页</view>
+					<view class="shou2" @click="jumpevaluation" :data-productinfo= "encodeURIComponent(JSON.stringify(productinfo))">去评价</view>
 				</view>
 			</view>
 			<view class="goods">
@@ -51,22 +51,32 @@
                 goods:[],//下拉刷新的商品
 				loadMoreText: "加载中...",
 				showLoadMore: false,
+				productinfo:{},
 			}
 		},
 		created() {
 			this.nav_height = uni.getStorageSync('nav_height')
 		},
 		onLoad(options){
-			console.log(options,'fff')
-			let routes = getCurrentPages(); // 获取当前打开过的页面路由数组
-			let curParam = routes[routes.length - 1].options; //获取路由参数
-			this.orderId=curParam.id; 
-			this.goodsId=curParam.pid; 
-			this.orderId=12143;
-			this.goodsId=1246; 
-			console.log(this.orderId,'ggg')
+			this.productinfo=JSON.parse(decodeURIComponent(options.productinfo))
+			console.log(this.productinfo,'fff')
+			this.goodsData = [],
+			this.loadMoreText = "加载更多",
+			this.showLoadMore = false;
+		},
+		//拉到底部
+		onReachBottom() {
+			this.page=this.page+1;
 			this.init()
-			
+			console.log("onReachBottom",this.goodsData,this.goods,this.page);
+			if(this.goods==[]||this.goods.length<10){
+				this.loadMoreText = "没有更多数据了!"
+				return;
+			}
+			this.showLoadMore = true;
+		},
+		mounted(){
+			this.init()
 		},
 		methods:{
 			//初始化
@@ -74,18 +84,19 @@
 				this.$http.post(
 				 '',
 				 {
-					access_id:uni.getStorageSync('access_id'),
 					store_id:'1',
 					store_type:'2',
 					module:'app',
-					action:"order",
-					app:"Returndetail",
-					id:this.orderId,
-					pid:this.goodsId,
+					action:"index",
+					app:"productRecommend",
+					page:this.page,
 				 }).then((res)=>{
 					console.log(res,'hh')
 					if(res.data.code==200){
-					
+					    res.data.data.data.forEach((item,index)=>{
+					    	this.goodsData.push(item)
+					    })
+					    this.goods=res.data.data.data;
 					}else{
 						uni.showToast({
 							title:res.data.message
@@ -105,6 +116,20 @@
 				uni.navigateTo({
 				    url: '/pages/goods/goodsDetail?id='+id
 				});
+			},
+			//去评价
+			jumpevaluation(e){
+				let res = e.currentTarget.dataset
+				console.log(res,'iioooo')
+				uni.navigateTo({
+					url:`/pages/evaluation/evaluation?productinfo=${res.productinfo}`,
+					icon:'none'
+				})
+			},
+			goHome(){
+				uni.reLaunch({
+					url: '/pages/tabBar/home'
+				})
 			}
 			
 		}

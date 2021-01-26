@@ -79,11 +79,11 @@
 			<view class="footer-btn">
 				<view @click="kf()">联系客服</view>
 				<view @click="jumpRefund" :data-id="product.id" :data-pid ="product.p_id" :data-productinfo= "encodeURIComponent(JSON.stringify(product))"  v-if="orderStatus=='待发货'&&(orderDetail[0].order_details)[0].return_order_status!==2">退款</view>
-				<view @click="jumpRefund" :data-id="product.id" :data-pid ="product.p_id" :data-productinfo= "encodeURIComponent(JSON.stringify(product))"   v-if="(orderDetail[0].order_details)[0].return_order_status==2">再次退款</view>
+				<view @click="jumpRefund" :data-id="product.id" :data-pid ="product.p_id" :data-productinfo= "encodeURIComponent(JSON.stringify(product))" v-if="orderStatus!=='待评价'&&(orderDetail[0].order_details)[0].return_order_status==2">再次退款</view>
 				<view class="btn-fu" v-if="orderStatus=='待评价'" @click="jumpevaluation" :data-productinfo= "encodeURIComponent(JSON.stringify(product))" :data-id = "product.id">去评价</view>
 				<view @click="cancelOrder()" v-if="orderStatus=='待付款'">取消订单</view>
 				<view @click="cancelTui()" v-if="orderStatus=='退款中'">撤销退款</view>
-				<view class="btn-fu" v-if="orderStatus=='待收货'" @click="shouHuo()">确认收货</view>
+				<view class="btn-fu" v-if="orderStatus=='待收货'" @click="shouHuo" :data-productinfo= "encodeURIComponent(JSON.stringify(product))" :data-id = "product.id">确认收货</view>
 				<view class="btn-fu" v-if="orderStatus=='待付款'">付款</view>
 			</view>
 		</view>
@@ -143,7 +143,7 @@
 						this.orderDetail=res.data.data.mch
 						this.product=(this.orderDetail[0].order_details)[0]
 						this.status=(this.orderDetail[0].order_details)[0].order_details_status
-						console.log(this.product,status,9999)
+						// console.log(this.product,status,9999)
 						if(this.status==0){
 							this.orderStatus='待付款'
 							let time=this.orderData.surplus
@@ -231,7 +231,7 @@
 				})
 			},
 			//确认收货
-			shouHuo(){
+			shouHuo(e){
 				let that=this
 				uni.showModal({
 				    title: '',
@@ -253,8 +253,9 @@
 								 console.log(res,'fff')
 								 if(res.data.code==200){
 									 //确认收货
+									 let re = e.currentTarget.dataset
 									uni.navigateTo({
-									    url: '/pages/personal/myOrder'
+									    url: `/pages/order/shouhuoS?id=${re.id}&productinfo=${re.productinfo}`
 									});
 								 }
 							})
