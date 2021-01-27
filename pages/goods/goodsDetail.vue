@@ -9,7 +9,7 @@
 			<swiper class="swiper" circular :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration">
 				<swiper-item v-for="(item,index) in goodsData.product_img" :key="index">
 					<view class="swiper-item">
-						<image :src="item.img_url"></image>
+						<image :src="item.img_url" @click="imgClick(item.img_url,goodsData.product_img)"></image>
 					</view>
 				</swiper-item>
 			</swiper>
@@ -23,11 +23,21 @@
 						<image src="../../static/img/btn_share.png"></image>
 					</view>
 					<!-- #endif-->
+					<!-- #ifndef H5 -->
+					<view  class="fenX2">
+						<button @click="goodsFen(goodsData.id,goodsData.product_title)" data-name="shareBtn1" open-type="share">分享商品</button>
+					</view>
+					
+					<!-- <view class="fenX" @click="goodsFen(goodsData.id,goodsData.product_title)">
+						<image src="../../static/img/btn_share.png"></image>
+					</view> -->
+					<!-- #endif-->
 				</view>
 				<view class="bTitle">{{goodsData.product_title}}</view>
 				<view class='bText2'>
 					<view>销量：{{goodsData.volume}}</view>
-					<view>运费：{{goodsData.freight}}</view>
+					<view v-if="goodsData.freight==0">包邮</view>
+					<view v-else>运费：{{goodsData.freight}}</view>
 				</view>
 			</view>
 			<!-- 评价 -->
@@ -70,9 +80,7 @@
 					</view>
 					<!-- #endif-->
 					<!-- #ifndef H5 -->
-					<view class="store_1 store_fen" @click="shopFen(goodsData.mch_id)">
-						分享店铺
-					</view>
+					<button  class="store_1 store_fen2" @click="shopFen(goodsData.mch_id,mch.name)" data-name="shareBtn" open-type="share">分享店铺</button>
 					<!-- #endif-->
 					<view class="store_1 store_go" @click="jumpShop(goodsData.mch_id)">进店逛逛</view>
 				</view>
@@ -230,6 +238,8 @@
 				collection_id:'',//收藏id
 				skuKey:false,
 				skuMode:1,
+				fenTitle:'',//分享名称
+				fenPath:'',//分享链接
 			}
 		},
 		created() {
@@ -243,22 +253,27 @@
 			console.log(this.goodsId,'ggg')
 			
 			this.init()
-			
+			this.fenTitle=this.goodsData.product_title
+			this.fenPath='pages/goods/goodsDetail?id='+this.goodsId
 			// this.getlist();
 		},
+		
 		methods:{
-			//小程序商品分享
 			onShareAppMessage: function(e) {
-				// console.log(e,'iiooo')
-				let title =this.goodsData.product_title
 				return {
-					title: title,
-					path: 'pages/goods/goodsDetail?id='+this.goodsId
+					title: this.fenTitle,
+					path: this.fenPath
 				}
 			},
-			shopFen(id){
-				//小程序店铺分享
-				// onShareAppMessage('shop')
+			//小程序商品分享
+			goodsFen(goodsId,title){
+				this.fenTitle=title
+				this.fenPath='pages/goods/goodsDetail?id='+goodsId
+			},
+			//小程序店铺分享
+			shopFen(shopId,title){
+				this.fenTitle=title
+				this.fenPath='pages/shop/shop?id='+shopId
 			},
 			
 			//h5复制连接
@@ -604,6 +619,20 @@
 			//商品数量
 			change(value) {
 				this.selectNum = value
+			},
+			//点击轮播图图片
+			imgClick(img,pro){
+				let imglists=[]
+				pro.forEach((item,index)=>{
+					imglists.push(item.img_url)
+				})
+				this.$nextTick(function(){
+					uni.previewImage({
+						current:img,
+						urls: imglists
+						
+					});
+				})
 			}
 		
 		}

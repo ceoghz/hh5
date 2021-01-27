@@ -1,12 +1,12 @@
 <template>
 	<view class="fen">
-		
 		<view class="header">
 			<Head :title="erData.pname"></Head>
 			<view class="" :style="{height:nav_height+'px',width:'100%'}"></view>
-			
 			<view class="example-body">
-				<uni-search-bar radius="100" placeholder="请搜索" @input="input" @confirm="search" />
+				<view class="e-content" @click='search()'>
+					<view class="sea"><image src="../../static/img/icon-搜索备份@2x.png"></image></view>
+				</view>
 			</view>
 			<view class="tab">
 				<view class="tabs">
@@ -71,6 +71,7 @@
 		},
 		data(){
 			return{
+				nav_height:0,
 				fenId:'',
 				searchVal:'',//搜索框
 				tabData:[],//总数据
@@ -123,15 +124,12 @@
 				    delta: 1
 				});
 			},
-			search(res) {
-				uni.showToast({
-					title: '搜索：' + res.value,
-					icon: 'none'
-				})
+			search(){
+				uni.navigateTo({
+				    url: '/pages/search/search'
+				});
 			},
-			input(res) {
-				this.searchVal = res.value
-			},
+			
 			scroll: function(e) {
 				this.old.scrollTop = e.detail.scrollTop
 			},

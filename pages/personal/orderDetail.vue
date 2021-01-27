@@ -7,6 +7,8 @@
 				<view class="head1">{{orderStatus}}</view>
 				<view v-if="orderStatus=='待付款'">剩余支付时间：{{yu_time}}</view>
 				<view v-else-if="orderStatus=='交易关闭'">已退款</view>
+				<view v-else-if="status==15">商家同意退货，等待用户寄回</view>
+				<view v-else-if="status==16">用户寄回中</view>
 				<view v-else-if="(orderStatus=='待发货'||orderStatus=='待收货')&&((orderDetail[0].order_details)[0].return_order_status==2)">退款失败</view>
 			</view>
 	   </view>
@@ -82,7 +84,7 @@
 				<view @click="jumpRefund" :data-id="product.id" :data-pid ="product.p_id" :data-productinfo= "encodeURIComponent(JSON.stringify(product))" v-if="orderStatus!=='待评价'&&(orderDetail[0].order_details)[0].return_order_status==2">再次退款</view>
 				<view class="btn-fu" v-if="orderStatus=='待评价'" @click="jumpevaluation" :data-productinfo= "encodeURIComponent(JSON.stringify(product))" :data-id = "product.id">去评价</view>
 				<view @click="cancelOrder()" v-if="orderStatus=='待付款'">取消订单</view>
-				<view @click="cancelTui()" v-if="orderStatus=='退款中'">撤销退款</view>
+				<view @click="cancelTui()" v-if="orderStatus=='退款中'||status==15">撤销退款</view>
 				<view class="btn-fu" v-if="orderStatus=='待收货'" @click="shouHuo" :data-productinfo= "encodeURIComponent(JSON.stringify(product))" :data-id = "product.id">确认收货</view>
 				<view class="btn-fu" v-if="orderStatus=='待付款'">付款</view>
 			</view>
